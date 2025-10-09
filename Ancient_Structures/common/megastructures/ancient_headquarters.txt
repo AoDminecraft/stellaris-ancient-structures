@@ -15,7 +15,6 @@ tdi_ancient_headquarters_0 = {
 			consumer_goods = 30000
 			alloys = 30000
 		}
-
 	}
 
 	potential = {
@@ -46,59 +45,8 @@ tdi_ancient_headquarters_0 = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = "requires_no_habitable_planets"
-			NOT = {
-				any_system_planet = {
-					AND = {
-						colonizable_planet = yes
-					}
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "requires_no_black_hole_neutron_star_pulsar"
-			NOT = {
-				is_star_class = sc_black_hole
-				is_star_class = sc_neutron_star
-				is_star_class = sc_pulsar
-			}
-		}
-		custom_tooltip = {
-			fail_text = "requires_no_binary_trinary"
-			NOR = {
-				is_star_class = sc_binary_1
-				is_star_class = sc_binary_2
-				is_star_class = sc_binary_3
-				is_star_class = sc_binary_4
-				is_star_class = sc_binary_5
-				is_star_class = sc_binary_6
-				is_star_class = sc_binary_7
-				is_star_class = sc_binary_8
-				is_star_class = sc_binary_9
-				is_star_class = sc_binary_10
-				is_star_class = sc_trinary_1
-				is_star_class = sc_trinary_2
-				is_star_class = sc_trinary_3
-				is_star_class = sc_trinary_4
-			}
-		}
-		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
-			#NOT = { has_any_megastructure = yes }
 			has_no_non_gate_megastructure = yes
-		}
-	}
-
-	placement_rules = {
-		planet_possible = {
-			custom_tooltip = {
-				fail_text = "must_build_around_star"
-				is_star = yes
-			}
-			custom_tooltip = {
-				fail_text = "requires_no_anomaly"
-				NOT = { has_anomaly = yes }
-			}
 		}
 	}
 
@@ -147,8 +95,8 @@ tdi_ancient_headquarters_0 = {
 
 # Ancient Headquarters Frame
 tdi_ancient_headquarters_1 = {
-	entity = "dyson_sphere_phase_01_entity"
-	construction_entity = "dyson_sphere_frame_entity"
+	entity = "strategic_coordination_center_1_entity"
+	construction_entity = "strategic_coordination_center_1_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 2000
 	resources = {
@@ -178,8 +126,8 @@ tdi_ancient_headquarters_1 = {
 
 # Partial Ancient Headquarters
 tdi_ancient_headquarters_2 = {
-	entity = "dyson_sphere_phase_02_entity"
-	construction_entity = "dyson_sphere_part_1_entity"
+	entity = "strategic_coordination_center_2_entity"
+	construction_entity = "strategic_coordination_center_2_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 2000
 	resources = {
@@ -209,8 +157,8 @@ tdi_ancient_headquarters_2 = {
 
 # Partial Ancient Headquarters
 tdi_ancient_headquarters_3 = {
-	entity = "dyson_sphere_phase_03_entity"
-	construction_entity = "dyson_sphere_part_2_entity"
+	entity = "strategic_coordination_center_3_entity"
+	construction_entity = "strategic_coordination_center_3_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
 	build_time = 2000
 	resources = {
@@ -238,42 +186,11 @@ tdi_ancient_headquarters_3 = {
 	}
 }
 
-# Partial Ancient Headquarters
-tdi_ancient_headquarters_4 = {
-	entity = "dyson_sphere_phase_04_entity"
-	construction_entity = "dyson_sphere_part_3_entity"
-	portrait = "GFX_megastructure_construction_background"
-	build_time = 2000
-	resources = {
-		category = megastructures
-		cost = {
-			energy = 30000
-			minerals = 30000
-			food = 30000
-			consumer_goods = 30000
-			alloys = 30000
-		}
-	}
-
-	upgrade_from = {
-		tdi_ancient_headquarters_3
-	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
-}
-
 # Operational Ancient Headquarters
-tdi_ancient_headquarters_5 = {
-	entity = "dyson_sphere_phase_05_entity"
-	construction_entity = "dyson_sphere_part_4_entity"
-	portrait = "GFX_megastructure_dyson_sphere_background"
+tdi_ancient_headquarters_4 = {
+	entity = "strategic_coordination_center_4_entity"
+	construction_entity = "strategic_coordination_center_4_construction_entity"
+	portrait = "GFX_megastructure_strategic_coordination_center_background"
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -293,30 +210,15 @@ tdi_ancient_headquarters_5 = {
 	}
 
 	upgrade_from = {
-		tdi_ancient_headquarters_4
+		tdi_ancient_headquarters_3
 	}
 
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-            set_country_flag = tdi_ancient_headquarters_operational
+			set_country_flag = tdi_ancient_headquarters_operational
 		}
 
-		every_system_planet = {
-			limit = {
-				OR = {
-					is_planet_class = pc_molten
-					is_planet_class = pc_toxic
-				}
-			}
-			change_pc = pc_frozen
-		}
-		every_system_planet = {
-			limit = {
-				is_planet_class = pc_barren
-			}
-			change_pc = pc_barren_cold
-		}
 		every_system_planet = {
 			limit = {
 				has_modifier = terraforming_candidate
