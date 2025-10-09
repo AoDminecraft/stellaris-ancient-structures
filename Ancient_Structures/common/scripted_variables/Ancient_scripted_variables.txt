@@ -1,0 +1,1 @@
+@max_vivarium_capacity = 2000000000		# Max Vivarium Increased to 2 Billion

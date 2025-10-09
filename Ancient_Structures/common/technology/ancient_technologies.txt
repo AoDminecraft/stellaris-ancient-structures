@@ -1,0 +1,187 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 500
+@tier1cost2 = 750
+@tier1cost3 = 1000
+
+@tier2cost1 = 1500
+@tier2cost2 = 2000
+@tier2cost3 = 2500
+
+@tier3cost1 = 4000
+@tier3cost2 = 5000
+@tier3cost3 = 6000
+
+@tier4cost1 = 8000
+@tier4cost2 = 10000
+@tier4cost3 = 12000
+
+@tier5cost1 = 15000
+@tier5cost2 = 17500
+@tier5cost3 = 20000
+
+# Starter technology to unlock Ancient Structures Megastructures Path
+tech_tdi_ancient_factories = {
+	cost = @tier5cost1
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_mega_engineering" }
+	tier = 5
+	
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_factories_title"
+			desc = "tech_tdi_ancient_factories_desc"
+		}
+	}
+}
+
+# Ancient Basic Factory Technology / Required for Ancient Advanced Factory Research
+tech_tdi_ancient_basic_factory = {
+	cost = @tier5cost1
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_tdi_ancient_factories" }
+	tier = 5
+
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_basic_factory_title"
+			desc = "tech_tdi_ancient_basic_factory_desc"
+		}
+	}
+}
+
+
+# Ancient Advanced Factory Technology / Required for Ancient Exotic Factory Research
+tech_tdi_ancient_advanced_factory = {
+	cost = @tier5cost2
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_tdi_ancient_basic_factory" }
+	tier = 5
+
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_advanced_factory_title"
+			desc = "tech_tdi_ancient_advanced_factory_desc"
+		}
+	}
+}
+
+# Ancient Exotic Factory Technology / Required for Ancient Headquarters Research
+tech_tdi_ancient_exotic_factory = {
+	cost = @tier5cost3
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_tdi_ancient_advanced_factory" }
+	tier = 5
+
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_exotic_factory_title"
+			desc = "tech_tdi_ancient_exotic_factory_desc"
+		}
+	}
+}
+
+
+# Ancient Headquarters Technology
+tech_tdi_ancient_headquarters = {
+	cost = @tier5cost1
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_tdi_ancient_exotic_factory" }
+	tier = 5
+
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_headquarters_title"
+			desc = "tech_tdi_ancient_headquarters_desc"
+		}
+	}
+}
+
+# Ancient Unification Center Technology
+tech_tdi_ancient_empire_unification = {
+	cost = @tier5cost1
+	is_rare = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { "tech_tdi_ancient_headquarters" }
+	tier = 5
+
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_empire_unification_title"
+			desc = "tech_tdi_ancient_empire_unification_desc"
+		}
+	}
+}
+
+# Ancient Fauna Preservation Pods Technology
+tech_tdi_ancient_fauna_preservation_pods = {
+	cost = @tier2cost1
+	is_rare = no
+	area = physics
+	category = { field_manipulation }
+	prerequisites = { "tech_gravity_wells" }
+	tier = 2
+	
+	icon = tech_gravity_wells
+
+	potential = {
+		is_ai = no
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_tdi_ancient_fauna_preservation_pods_title"
+			desc = "tech_tdi_ancient_fauna_preservation_pods_desc"
+		}
+	}
+}

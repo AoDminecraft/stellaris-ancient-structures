@@ -1,0 +1,125 @@
+﻿l_english:
+
+# Ancient Structures Traits
+trait_ancient_immortality: "Ancient Immortality"
+trait_ancient_immortality_desc: "Ancient knowledge has allowed us to unlock powerful ability of making our empires leader Immortal and no longer bound by the laws of time."
+
+# Ancient Structures Foundational Technology
+tech_tdi_ancient_factories: "Ancient Factories"
+tech_tdi_ancient_factories_title: "Ancient Factories"
+tech_tdi_ancient_factories_desc: "Foundational Research on Ancient Factories"
+
+# Ancient Structures Ancient Basic Factory Technology
+tech_tdi_ancient_basic_factory: "Ancient Factories"
+tech_tdi_ancient_basic_factory_title: "Ancient Basic Factory"
+tech_tdi_ancient_basic_factory_desc: "Research Data on Ancient Basic Factories"
+
+# Ancient Structures Ancient Advanced Factory Technology
+tech_tdi_ancient_advanced_factory: "Ancient Factories"
+tech_tdi_ancient_advanced_factory_title: "Ancient Advanced Factory"
+tech_tdi_ancient_advanced_factory_desc: "Research Data on Ancient Advanced Factories"
+
+# Ancient Structures Ancient Exotic Factory Technology
+tech_tdi_ancient_exotic_factory: "Ancient Factories"
+tech_tdi_ancient_exotic_factory_title: "Ancient Exotic Factory"
+tech_tdi_ancient_exotic_factory_desc: "Research Data on Ancient Exotic Factories"
+
+# Ancient Structures Ancient Headquarters Technology
+tech_tdi_ancient_headquarters: "Ancient Factories"
+tech_tdi_ancient_headquarters_title: "Ancient Headquarters"
+tech_tdi_ancient_headquarters_desc: "Research Data on Ancient Headquarters"
+
+# Ancient Structures Ancient Unification Technology
+tech_tdi_ancient_empire_unification: "Ancient Empire Unification"
+tech_tdi_ancient_empire_unification_title: "Ancient Empire Unification"
+tech_tdi_ancient_empire_unification_desc: "Research Data on Ancient Empire Unification"
+
+# Ancient Structures Fauna Pods Technology
+tech_tdi_ancient_fauna_preservation_pods: "Ancient Fauna Preservation Pods"
+tech_tdi_ancient_fauna_preservation_pods_title: "Ancient Fauna Preservation Pods"
+tech_tdi_ancient_fauna_preservation_pods_desc: "Research Data on Ancient Fauna Preservation Pods"
+
+# Ancient Structures Fauna Pods
+sm_ancient_fauna_pods: "Ancient Fauna Preservation Pods"
+sm_ancient_fauna_pods_desc: "Ancient Fauna Preservation Pods are external tanks for safely housing Space Fauna in specialized Preservation Pods"
+
+# Ancient Resource Pods
+sm_ancient_resource_silo: "Ancient Rift Storage Silos"
+sm_ancient_resource_silo_desc: "Ancient Rift Storage Silos utilise rift pocket techology to store large quanties in rift pockets within the silos."
+
+# Ancient Structures Ancient Basic Factory
+tdi_ancient_basic_factory_0: "Ancient Basic Factory"
+tdi_ancient_basic_factory_0_DESC: "Ancient Basic Factory"
+tdi_ancient_basic_factory_0_MEGASTRUCTURE_DETAILS: "Ancient Basic Factory Construction Platform lays the foundations and required machinery to construct the Ancient Basic Factory"
+tdi_ancient_basic_factory_1: "Ancient Basic Factory"
+tdi_ancient_basic_factory_1_DESC: "Stage 1 of the construction and upgrade of the Ancient Basic Factory"
+tdi_ancient_basic_factory_2: "Ancient Basic Factory"
+tdi_ancient_basic_factory_2_DESC: "Stage 2 of the construction and upgrade of the Ancient Basic Factory"
+tdi_ancient_basic_factory_3: "Ancient Basic Factory"
+tdi_ancient_basic_factory_3_DESC: "Stage 3 of the construction and upgrade of the Ancient Basic Factory"
+tdi_ancient_basic_factory_4: "Ancient Basic Factory"
+tdi_ancient_basic_factory_4_DESC: "Stage 4 of the construction and upgrade of the Ancient Basic Factory"
+tdi_ancient_basic_factory_5: "Ancient Basic Factory"
+tdi_ancient_basic_factory_5_DESC: "Ancient Basic Factory is now operational and producing our empires Basic Materials needs."
+
+# Ancient Structures Ancient Advanced Factory
+tdi_ancient_advanced_factory_0: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_0_DESC: "Ancient Advanced Factory Construction Platform"
+tdi_ancient_advanced_factory_0_MEGASTRUCTURE_DETAILS: "Ancient Advanced Factory Construction Platfrom lays the foundations and required machinery to construct the Ancient Advanced Factory"
+tdi_ancient_advanced_factory_1: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_1_DESC: "Stage 1 of the construction and upgrade of the Ancient Advanced Factory"
+tdi_ancient_advanced_factory_2: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_2_DESC: "Stage 2of the construction and upgrade of the Ancient Advanced Factory"
+tdi_ancient_advanced_factory_3: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_3_DESC: "Stage 3 of the construction and upgrade of the Ancient Advanced Factory"
+tdi_ancient_advanced_factory_4: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_4_DESC: "Stage 4 of the construction and upgrade of the Ancient Advanced Factory"
+tdi_ancient_advanced_factory_5: "Ancient Advanced Factory"
+tdi_ancient_advanced_factory_5_DESC: "Ancient Advanced Factory is now operational and producing our empires Advanced Materials needs."
+
+# Ancient Structures Ancient Exotic Factory
+tdi_ancient_exotic_factory_0: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_0_DESC: "Ancient Exotic Factory Construction Platform"
+tdi_ancient_exotic_factory_0_MEGASTRUCTURE_DETAILS: "Ancient Exotic Factory Construction Platfrom lays the foundations and required machinery to construct the Ancient Exotic Factory"
+tdi_ancient_exotic_factory_1: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_1_DESC: "Stage 1 of the construction and upgrade of the Ancient Exotic Factory"
+tdi_ancient_exotic_factory_2: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_2_DESC: "Stage 2 of the construction and upgrade of the Ancient Exotic Factory"
+tdi_ancient_exotic_factory_3: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_3_DESC: "Stage 3 of the construction and upgrade of the Ancient Exotic Factory"
+tdi_ancient_exotic_factory_4: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_4_DESC: "Stage 4 of the construction and upgrade of the Ancient Exotic Factory"
+tdi_ancient_exotic_factory_5: "Ancient Exotic Factory"
+tdi_ancient_exotic_factory_5_DESC: "Ancient Exotic Factory is now operational and producing our empires Exotic Materials needs."
+
+# Ancient Structures Ancient Headquarters
+tdi_ancient_headquarters_0: "Ancient Headquarters"
+tdi_ancient_headquarters_0_DESC: "Ancient Headquarters Construction Platform"
+tdi_ancient_headquarters_0_MEGASTRUCTURE_DETAILS: "Ancient Headquarters Construction Platform lays the foundations and required machinery to construct the Ancient Headquarters"
+requires_no_existing_ancient_headquarters: "Empire Must Not Already Have An Operational Ancient Headquarters"
+tdi_ancient_headquarters_1: "Ancient Headquarters"
+tdi_ancient_headquarters_1_DESC: "Stage 1 of the construction and upgrade of the Ancient Headquarters"
+tdi_ancient_headquarters_2: "Ancient Headquarters"
+tdi_ancient_headquarters_2_DESC: "Stage 2 of the construction and upgrade of the Ancient Headquarters"
+tdi_ancient_headquarters_3: "Ancient Headquarters"
+tdi_ancient_headquarters_3_DESC: "Stage 3 of the construction and upgrade of the Ancient Headquarters"
+tdi_ancient_headquarters_4: "Ancient Headquarters"
+tdi_ancient_headquarters_4_DESC: "Stage 4 of the construction and upgrade of the Ancient Headquarters"
+tdi_ancient_headquarters_5: "Ancient Headquarters"
+tdi_ancient_headquarters_5_DESC: "Ancient Headquarters is now operational and fully connected to our Empires Military Command and Control Centers across the galaxy."
+
+# Ancient Structures Ancient Empire Unification
+requires_no_existing_ancient_empire_unification: "Empire Must Not Already Have An Operational Ancient Empire Unification Center"
+tdi_ancient_empire_unification_0: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_0_DESC: "Ancient Empire Unification Center Construction Platform"
+tdi_ancient_empire_unification_0_MEGASTRUCTURE_DETAILS: "Ancient Empire Unification Center Construction Platform lays the foundations and required machinery to construct the Ancient Empire Unification Center"
+tdi_ancient_empire_unification_1: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_1_DESC: "Stage 1 of the construction and upgrade of the Ancient Empire Unification center"
+tdi_ancient_empire_unification_2: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_2_DESC: "Stage 2 of the construction and upgrade of the Ancient Empire Unification center"
+tdi_ancient_empire_unification_3: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_3_DESC: "Stage 3 of the construction and upgrade of the Ancient Empire Unification center"
+tdi_ancient_empire_unification_4: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_4_DESC: "Stage 4 of the construction and upgrade of the Ancient Empire Unification center"
+tdi_ancient_empire_unification_5: "Ancient Empire Unification Center"
+tdi_ancient_empire_unification_5_DESC: "Ancient Empire Unification Center is now operational and our specialists have already begun to execute empire wide unification protocols"

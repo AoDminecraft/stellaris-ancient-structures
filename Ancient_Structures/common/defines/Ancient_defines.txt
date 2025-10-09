@@ -1,0 +1,5 @@
+NGameplay = {
+		MIN_TRADE_DEAL_LENGTH_YEARS = 1			# Min length of trade deal in years
+		MAX_TRADE_DEAL_LENGTH_YEARS = 100		# Max length of trade deal in years
+		MAX_VIVARIUM_CAPACITY = 2000000000		# Max Vivarium Increased to 2 Billion
+	}

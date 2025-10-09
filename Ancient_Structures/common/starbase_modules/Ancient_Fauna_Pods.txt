@@ -1,0 +1,38 @@
+ancient_fauna_pods = {
+	icon = "GFX_starbase_vivarium_tank"
+	section = "SCIENCE_STARBASE_SECTION"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_technology = tech_tdi_ancient_fauna_preservation_pods
+				has_origin = origin_primal_calling
+			}
+		}
+		is_normal_starbase = yes
+		is_orbital_ring = no
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	country_modifier = {
+		country_vivarium_max_capacity_add = 5000
+	}
+
+	orbit_modifier = {
+		space_fauna_growth_rate_mult = 0.1
+	}
+
+	show_in_tech = "tech_tdi_ancient_fauna_preservation_pods"
+}
