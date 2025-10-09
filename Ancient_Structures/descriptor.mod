@@ -5,5 +5,5 @@ tags={
 	"Economy"
 }
 name="Ancient Structures"
-supported_version="v4.15.*"
+supported_version="v4.1.*"
 remote_file_id="3453825443"
