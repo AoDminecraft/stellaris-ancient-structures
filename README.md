@@ -36,9 +36,11 @@ Additional content unlocks after meeting specific requirements. Build the prereq
 ## 🎮 Installation
 
 ### Steam Workshop
+
 *Coming soon - mod currently in alpha testing*
 
 ### Manual Installation
+
 1. Download or clone this repository
 2. Place the `Ancient_Structures` folder in your Stellaris mod directory:
    - Windows: `Documents/Paradox Interactive/Stellaris/mod/`
@@ -56,8 +58,9 @@ Additional content unlocks after meeting specific requirements. Build the prereq
 ## 🎯 Design Philosophy
 
 This mod is designed for players who want:
+
 - Powerful late-game megastructures without placement restrictions
-- High resource costs balanced by significant benefits  
+- High resource costs balanced by significant benefits
 - Progression-based unlocks requiring strategic planning
 - *Optional* extreme late-game challenges and opportunities
 
@@ -88,6 +91,7 @@ This mod is designed for players who want:
 ## 📜 Version History
 
 ### v1.0.0-alpha (Current)
+
 - Initial release
 - Added 5 ancient megastructures
 - Added progression technology tree
@@ -101,7 +105,7 @@ This mod is currently in alpha testing. Bug reports, balance suggestions, and fe
 
 ## 📄 License
 
-This mod is free to use and modify. Credit appreciated but not required.
+This mod is free to use and modify. Credit appreciated but not required for private projects for public projects linking this Github repository is sufficient.
 
 ## 👤 Author
 
