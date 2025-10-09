@@ -185,3 +185,47 @@ tech_tdi_ancient_fauna_preservation_pods = {
 		}
 	}
 }
+
+# Ancient Apocalypse Engine Technology - THE FORBIDDEN KNOWLEDGE
+tech_crisis_sphere_1 = {
+	cost = @tier5cost3
+	is_rare = yes
+	is_dangerous = yes
+	area = engineering
+	category = { voidcraft }
+	prerequisites = { 
+		"tech_tdi_ancient_empire_unification"
+		"tech_dark_matter_power_core"
+	}
+	tier = 5
+	
+	icon = tech_dyson_sphere
+
+	potential = {
+		is_ai = no
+		# Must have both Headquarters and Unification operational
+		has_country_flag = tdi_ancient_headquarters_operational
+		has_country_flag = tdi_ancient_empire_unification_operational
+		# Extra requirements - make it HARD to get
+		has_technology = tech_titans
+		fleet_power > 500000
+	}
+	
+	weight = 0
+	
+	# Can only be researched if you manually select it
+	weight_modifier = {
+		factor = 0
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "tech_crisis_sphere_1_title"
+			desc = "tech_crisis_sphere_1_desc"
+		}
+	}
+	
+	on_research_complete = {
+		custom_tooltip = tech_crisis_sphere_1_effect
+	}
+}

@@ -1,0 +1,214 @@
+namespace = tdi_reality_tear
+
+# Reality Tear Controller - Random chaos every 365-730 days
+event = {
+	id = tdi_reality_tear.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		# Pick a random system in empire
+		random_owned_starbase = {
+			solar_system = {
+				save_event_target_as = chaos_system
+				
+				# Random chaos event
+				random_list = {
+					25 = { root = { country_event = { id = tdi_reality_tear.10 } } } # Wormhole spawns
+					25 = { root = { country_event = { id = tdi_reality_tear.20 } } } # Space monsters
+					25 = { root = { country_event = { id = tdi_reality_tear.30 } } } # Star instability
+					25 = { root = { country_event = { id = tdi_reality_tear.40 } } } # Dimensional breach
+				}
+			}
+		}
+		
+		# Next chaos event
+		country_event = { id = tdi_reality_tear.1 days = 365 random = 365 }
+	}
+}
+
+# Reality Tear: Wormhole Spawn
+country_event = {
+	id = tdi_reality_tear.10
+	title = "tdi_reality_tear.10.name"
+	desc = "tdi_reality_tear.10.desc"
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:chaos_system = {
+			# Spawn natural wormhole
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_reality_tear.10.a"
+		tooltip = {
+			custom_tooltip = reality_tear_wormhole_effect
+		}
+	}
+}
+
+# Reality Tear: Space Monster Invasion
+country_event = {
+	id = tdi_reality_tear.20
+	title = "tdi_reality_tear.20.name"
+	desc = "tdi_reality_tear.20.desc"
+	picture = GFX_evt_alien_nature
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:chaos_system = {
+			# Spawn hostile space monsters
+			random_list = {
+				33 = { 
+					create_country = {
+						name = "Void Horrors"
+						type = "extradimensional"
+						flag = {
+							icon = { category = "special" file = "unknown.dds" }
+							background = { category = "backgrounds" file = "00_solid.dds" }
+							colors = { "black" "red" "null" "null" }
+						}
+						effect = {
+							save_event_target_as = horror_country
+						}
+					}
+					create_fleet = {
+						name = "Void Horror Swarm"
+						effect = {
+							set_owner = event_target:horror_country
+							create_ship = {
+								name = random
+								design = "NAME_Void_Horror"
+								graphical_culture = "extra_dimensional_01"
+							}
+							create_ship = {
+								name = random
+								design = "NAME_Void_Horror"
+								graphical_culture = "extra_dimensional_01"
+							}
+							create_ship = {
+								name = random
+								design = "NAME_Void_Horror"
+								graphical_culture = "extra_dimensional_01"
+							}
+							set_location = prev
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 500
+						}
+					}
+				}
+				33 = { 
+					spawn_system_ambient_object = {
+						type = "hostile_spawn_point_spawn_object"
+						location = this
+					}
+				}
+				34 = {
+					# Spawn leviathan
+					create_ambient_object = {
+						type = "large_object"
+						location = this
+						use_3d_location = yes
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_reality_tear.20.a"
+		tooltip = {
+			custom_tooltip = reality_tear_monsters_effect
+		}
+	}
+}
+
+# Reality Tear: Star Instability
+country_event = {
+	id = tdi_reality_tear.30
+	title = "tdi_reality_tear.30.name"
+	desc = "tdi_reality_tear.30.desc"
+	picture = GFX_evt_star_yellow
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:chaos_system = {
+			# Add dangerous modifier to system
+			add_modifier = {
+				modifier = tdi_unstable_star
+				days = 3600
+			}
+			
+			# Chance to damage planets
+			every_system_planet = {
+				limit = {
+					is_colony = yes
+				}
+				random_list = {
+					30 = {
+						add_modifier = {
+							modifier = tdi_solar_storm_damage
+							days = 1800
+						}
+					}
+					70 = {}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_reality_tear.30.a"
+		tooltip = {
+			custom_tooltip = reality_tear_star_effect
+		}
+	}
+}
+
+# Reality Tear: Dimensional Breach
+country_event = {
+	id = tdi_reality_tear.40
+	title = "tdi_reality_tear.40.name"
+	desc = "tdi_reality_tear.40.desc"
+	picture = GFX_evt_dimensional_Horror
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:chaos_system = {
+			# Spawn dimensional horror effect
+			create_ambient_object = {
+				type = "dimensional_horror_spawn_object"
+				location = this
+				use_3d_location = yes
+			}
+			
+			# Add system debuff
+			add_modifier = {
+				modifier = tdi_dimensional_breach
+				days = 7200
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_reality_tear.40.a"
+		tooltip = {
+			custom_tooltip = reality_tear_dimensional_effect
+		}
+	}
+}

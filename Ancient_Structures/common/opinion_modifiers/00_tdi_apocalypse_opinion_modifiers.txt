@@ -1,0 +1,199 @@
+# Opinion Modifiers - The Galaxy's Growing Horror
+
+opinion_tdi_apocalypse_threat_1 = {
+	opinion = {
+		base = -50
+		
+		modifier = {
+			has_ethic = ethic_xenophile
+			add = -25
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_xenophile
+			add = -50
+		}
+		modifier = {
+			has_ethic = ethic_pacifist
+			add = -50
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_pacifist
+			add = -75
+		}
+		modifier = {
+			has_ethic = ethic_spiritualist
+			add = -50
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_spiritualist
+			add = -100
+		}
+		modifier = {
+			has_ethic = ethic_militarist
+			add = 10
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_militarist
+			add = 25
+		}
+	}
+	
+	unique = yes
+	decay = 0
+}
+
+opinion_tdi_apocalypse_threat_2 = {
+	opinion = {
+		base = -100
+		
+		modifier = {
+			has_ethic = ethic_xenophile
+			add = -50
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_xenophile
+			add = -100
+		}
+		modifier = {
+			has_ethic = ethic_pacifist
+			add = -75
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_pacifist
+			add = -150
+		}
+		modifier = {
+			has_ethic = ethic_spiritualist
+			add = -75
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_spiritualist
+			add = -150
+		}
+		modifier = {
+			has_ethic = ethic_militarist
+			add = -10
+		}
+	}
+	
+	unique = yes
+	decay = 0
+}
+
+opinion_tdi_apocalypse_threat_3 = {
+	opinion = {
+		base = -200
+		
+		modifier = {
+			has_ethic = ethic_xenophile
+			add = -100
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_xenophile
+			add = -200
+		}
+		modifier = {
+			has_ethic = ethic_pacifist
+			add = -150
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_pacifist
+			add = -300
+		}
+		modifier = {
+			has_ethic = ethic_spiritualist
+			add = -150
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_spiritualist
+			add = -300
+		}
+		modifier = {
+			has_ethic = ethic_militarist
+			add = -25
+		}
+	}
+	
+	unique = yes
+	decay = 0
+}
+
+opinion_tdi_apocalypse_threat_4 = {
+	opinion = {
+		base = -400
+		
+		modifier = {
+			has_ethic = ethic_xenophile
+			add = -200
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_xenophile
+			add = -400
+		}
+		modifier = {
+			has_ethic = ethic_pacifist
+			add = -300
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_pacifist
+			add = -600
+		}
+		modifier = {
+			has_ethic = ethic_spiritualist
+			add = -300
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_spiritualist
+			add = -600
+		}
+		modifier = {
+			has_ethic = ethic_militarist
+			add = -50
+		}
+	}
+	
+	unique = yes
+	decay = 0
+}
+
+opinion_tdi_apocalypse_threat_5 = {
+	opinion = {
+		base = -600
+		
+		modifier = {
+			has_ethic = ethic_xenophile
+			add = -400
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_xenophile
+			add = -800
+		}
+		modifier = {
+			has_ethic = ethic_pacifist
+			add = -600
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_pacifist
+			add = -1200
+		}
+		modifier = {
+			has_ethic = ethic_spiritualist
+			add = -600
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_spiritualist
+			add = -1200
+		}
+		modifier = {
+			has_ethic = ethic_militarist
+			add = -100
+		}
+		modifier = {
+			has_ethic = ethic_fanatic_militarist
+			add = -200
+		}
+	}
+	
+	unique = yes
+	decay = 0
+}

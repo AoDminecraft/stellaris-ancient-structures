@@ -1,0 +1,263 @@
+namespace = tdi_final_protocol
+
+# Final Protocol Activated
+country_event = {
+	id = tdi_final_protocol.1
+	title = "tdi_final_protocol.1.name"
+	desc = "tdi_final_protocol.1.desc"
+	picture = GFX_evt_crisis_sphere
+	show_sound = event_aetherophasic_engine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Notify galaxy
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = tdi_final_protocol.50 }
+		}
+		
+		# Start countdown sequence
+		country_event = { id = tdi_final_protocol.2 days = 360 }
+	}
+	
+	option = {
+		name = "tdi_final_protocol.1.a"
+		tooltip = {
+			custom_tooltip = tdi_final_protocol_sequence_start
+		}
+	}
+}
+
+# Final Protocol Stage 2 - Energy Buildup
+country_event = {
+	id = tdi_final_protocol.2
+	title = "tdi_final_protocol.2.name"
+	desc = "tdi_final_protocol.2.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_final_protocol_stage_2
+		
+		# Massive power surge
+		add_resource = {
+			energy = 100000
+		}
+		
+		# Engine system becomes unstable
+		random_owned_megastructure = {
+			limit = {
+				is_megastructure_type = tdi_ancient_apocalypse_engine_5
+			}
+			solar_system = {
+				add_modifier = {
+					modifier = tdi_final_protocol_active
+					days = -1
+				}
+			}
+		}
+		
+		country_event = { id = tdi_final_protocol.3 days = 360 }
+	}
+	
+	option = {
+		name = "tdi_final_protocol.2.a"
+	}
+}
+
+# Final Protocol Stage 3 - Reality Fractures
+country_event = {
+	id = tdi_final_protocol.3
+	title = "tdi_final_protocol.3.name"
+	desc = "tdi_final_protocol.3.desc"
+	picture = GFX_evt_dimensional_Horror
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_final_protocol_stage_3
+		
+		# Reality starts breaking
+		every_system_within_border = {
+			limit = {
+				any_system_planet = { is_colony = yes }
+			}
+			random_list = {
+				20 = {
+					add_modifier = {
+						modifier = tdi_reality_fracture
+						days = -1
+					}
+				}
+				80 = {}
+			}
+		}
+		
+		country_event = { id = tdi_final_protocol.4 days = 360 }
+	}
+	
+	option = {
+		name = "tdi_final_protocol.3.a"
+	}
+}
+
+# Final Protocol Stage 4 - The Convergence
+country_event = {
+	id = tdi_final_protocol.4
+	title = "tdi_final_protocol.4.name"
+	desc = "tdi_final_protocol.4.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_final_protocol_stage_4
+		
+		# All crisis fleets converge
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = tdi_apocalypse_fleet
+			}
+			# Buff them MASSIVELY
+			every_owned_ship = {
+				add_modifier = {
+					modifier = tdi_final_convergence
+					days = -1
+				}
+			}
+		}
+		
+		country_event = { id = tdi_final_protocol.5 days = 360 }
+	}
+	
+	option = {
+		name = "tdi_final_protocol.4.a"
+	}
+}
+
+# Final Protocol Stage 5 - READY
+country_event = {
+	id = tdi_final_protocol.5
+	title = "tdi_final_protocol.5.name"
+	desc = "tdi_final_protocol.5.desc"
+	picture = GFX_evt_crisis_sphere
+	show_sound = event_aetherophasic_engine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_final_protocol_stage_5
+		set_country_flag = tdi_apotheosis_path_unlocked
+		set_country_flag = tdi_omnicide_path_unlocked
+	}
+	
+	option = {
+		name = "tdi_final_protocol.5.a"
+		tooltip = {
+			custom_tooltip = tdi_final_protocol_ready
+		}
+	}
+}
+
+# Galaxy Notification - Final Protocol Detected
+country_event = {
+	id = tdi_final_protocol.50
+	title = "tdi_final_protocol.50.name"
+	desc = "tdi_final_protocol.50.desc"
+	picture = GFX_evt_crisis_sphere
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_final_protocol.50.a"
+		# "This is it. The end of everything."
+	}
+}
+
+# APOTHEOSIS ENDING - Transcendence Victory
+country_event = {
+	id = tdi_final_protocol.100
+	title = "tdi_final_protocol.100.name"
+	desc = "tdi_final_protocol.100.desc"
+	picture = GFX_evt_crisis_sphere
+	show_sound = event_aetherophasic_engine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# You win, but at what cost?
+		set_country_flag = victory_apotheosis
+		
+		# Become post-physical entities
+		every_owned_pop = {
+			kill_pop = yes
+		}
+		
+		# All your planets become tomb worlds
+		every_owned_planet = {
+			change_pc = pc_nuked
+		}
+		
+		# But you transcend
+		add_modifier = {
+			modifier = tdi_transcendent_being
+			days = -1
+		}
+	}
+	
+	option = {
+		name = "tdi_final_protocol.100.a"
+		# Victory screen
+		custom_tooltip = tdi_victory_apotheosis
+		
+		# Trigger victory
+		set_global_flag = victory_tdi_apotheosis
+	}
+}
+
+# OMNICIDE ENDING - Total Annihilation Victory
+country_event = {
+	id = tdi_final_protocol.200
+	title = "tdi_final_protocol.200.name"
+	desc = "tdi_final_protocol.200.desc"
+	picture = GFX_evt_crisis_sphere
+	show_sound = event_aetherophasic_engine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = victory_omnicide
+		
+		# Galaxy burns
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			every_owned_planet = {
+				limit = { is_colony = yes }
+				destroy_colony = yes
+			}
+		}
+		
+		# Stars die
+		every_galaxy_planet = {
+			limit = { is_star = yes }
+			destroy_colony = yes
+		}
+	}
+	
+	option = {
+		name = "tdi_final_protocol.200.a"
+		custom_tooltip = tdi_victory_omnicide
+		
+		# Trigger victory
+		set_global_flag = victory_tdi_omnicide
+	}
+}

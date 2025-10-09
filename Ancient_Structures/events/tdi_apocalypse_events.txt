@@ -1,0 +1,399 @@
+namespace = tdi_apocalypse
+
+# Apocalypse Engine Activated - The Beginning of the End
+country_event = {
+	id = tdi_apocalypse.1
+	title = "tdi_apocalypse.1.name"
+	desc = "tdi_apocalypse.1.desc"
+	picture = GFX_evt_crisis_sphere
+	show_sound = event_aetherophasic_engine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Inform the galaxy
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = tdi_apocalypse.100 }
+		}
+		
+		# Wake the Fallen Empires (they're WATCHING)
+		every_country = {
+			limit = { is_country_type = fallen_empire }
+			country_event = { id = tdi_apocalypse.200 }
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.1.a"
+		tooltip = {
+			custom_tooltip = tdi_apocalypse_no_return
+		}
+		
+		# Start escalation cycle
+		country_event = { id = tdi_apocalypse.10 days = 1825 }
+		
+		# Start crisis fleet spawning
+		country_event = { id = tdi_apocalypse_fleets.2 }
+		
+		# Start reality tear events
+		country_event = { id = tdi_reality_tear.1 days = 365 }
+		
+		# Start fleet power-up cycle
+		country_event = { id = tdi_apocalypse_fleets.10 days = 1825 }
+		
+		# Start apotheosis tracking
+		country_event = { id = tdi_apotheosis.1 days = 1825 }
+		
+		# Notify rivals
+		every_country = {
+			limit = {
+				is_country_type = default
+				is_ai = yes
+				has_technology = tech_crisis_sphere_1
+			}
+			country_event = { id = tdi_rival_crisis.1 days = 360 }
+		}
+	}
+}
+
+# 5 Year Escalation - Stage 1
+country_event = {
+	id = tdi_apocalypse.10
+	title = "tdi_apocalypse.10.name"
+	desc = "tdi_apocalypse.10.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = tdi_apocalypse_escalation_1
+			days = -1
+		}
+		
+		# Increase opinion penalty
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			add_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_2
+				who = root
+			}
+		}
+		
+		# FE awakening check (25% chance)
+		random_list = {
+			25 = {
+				random_country = {
+					limit = { 
+						is_country_type = fallen_empire
+						NOT = { has_country_flag = tdi_apocalypse_awakening_triggered }
+					}
+					country_event = { id = tdi_apocalypse.201 }
+				}
+			}
+			75 = {}
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.10.a"
+		
+		# Next escalation
+		country_event = { id = tdi_apocalypse.20 days = 1825 }
+		
+		# Apotheosis Stage 2 check
+		if = {
+			limit = {
+				NOT = { has_country_flag = tdi_apotheosis_stage_1 }
+			}
+			country_event = { id = tdi_apotheosis.1 }
+		}
+	}
+}
+
+# 10 Year Escalation - Stage 2
+country_event = {
+	id = tdi_apocalypse.20
+	title = "tdi_apocalypse.20.name"
+	desc = "tdi_apocalypse.20.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		remove_modifier = tdi_apocalypse_escalation_1
+		add_modifier = {
+			modifier = tdi_apocalypse_escalation_2
+			days = -1
+		}
+		
+		# Even worse opinion
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			remove_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_2
+				who = root
+			}
+			add_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_3
+				who = root
+			}
+		}
+		
+		# FE awakening check (50% chance)
+		random_list = {
+			50 = {
+				random_country = {
+					limit = { 
+						is_country_type = fallen_empire
+						NOT = { has_country_flag = tdi_apocalypse_awakening_triggered }
+					}
+					country_event = { id = tdi_apocalypse.201 }
+				}
+			}
+			50 = {}
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.20.a"
+		
+		# Next escalation
+		country_event = { id = tdi_apocalypse.30 days = 1825 }
+	}
+}
+
+# 15 Year Escalation - Stage 3
+country_event = {
+	id = tdi_apocalypse.30
+	title = "tdi_apocalypse.30.name"
+	desc = "tdi_apocalypse.30.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		remove_modifier = tdi_apocalypse_escalation_2
+		add_modifier = {
+			modifier = tdi_apocalypse_escalation_3
+			days = -1
+		}
+		
+		# Critical opinion penalty
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			remove_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_3
+				who = root
+			}
+			add_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_4
+				who = root
+			}
+		}
+		
+		# FE awakening check (75% chance)
+		random_list = {
+			75 = {
+				random_country = {
+					limit = { 
+						is_country_type = fallen_empire
+						NOT = { has_country_flag = tdi_apocalypse_awakening_triggered }
+					}
+					country_event = { id = tdi_apocalypse.201 }
+				}
+			}
+			25 = {}
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.30.a"
+		
+		# Final escalation
+		country_event = { id = tdi_apocalypse.40 days = 1825 }
+	}
+}
+
+# 20+ Year Escalation - Final Stage - YOU ARE THE CRISIS
+country_event = {
+	id = tdi_apocalypse.40
+	title = "tdi_apocalypse.40.name"
+	desc = "tdi_apocalypse.40.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		remove_modifier = tdi_apocalypse_escalation_3
+		add_modifier = {
+			modifier = tdi_apocalypse_escalation_4
+			days = -1
+		}
+		
+		# Maximum opinion penalty
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_same_value = root }
+			}
+			remove_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_4
+				who = root
+			}
+			add_opinion_modifier = {
+				modifier = opinion_tdi_apocalypse_threat_5
+				who = root
+			}
+		}
+		
+		# ALL Fallen Empires wake up now
+		every_country = {
+			limit = { 
+				is_country_type = fallen_empire
+				NOT = { has_country_flag = tdi_apocalypse_awakening_triggered }
+			}
+			country_event = { id = tdi_apocalypse.201 }
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.40.a"
+		tooltip = {
+			custom_tooltip = tdi_apocalypse_endgame
+		}
+	}
+}
+
+# Galaxy Notification - Someone Built the Doomsday Device
+country_event = {
+	id = tdi_apocalypse.100
+	title = "tdi_apocalypse.100.name"
+	desc = "tdi_apocalypse.100.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_opinion_modifier = {
+			modifier = opinion_tdi_apocalypse_threat_1
+			who = from
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.100.a"
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		# Horrified response
+	}
+	
+	option = {
+		name = "tdi_apocalypse.100.b"
+		trigger = {
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		# Grudging respect
+	}
+	
+	option = {
+		name = "tdi_apocalypse.100.c"
+		trigger = {
+			OR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		# Religious condemnation
+	}
+	
+	option = {
+		name = "tdi_apocalypse.100.d"
+		# Default response
+	}
+}
+
+# Fallen Empire Awareness
+country_event = {
+	id = tdi_apocalypse.200
+	title = "tdi_apocalypse.200.name"
+	desc = "tdi_apocalypse.200.desc"
+	picture = GFX_evt_fallen_empire_awaken_1
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_opinion_modifier = {
+			modifier = opinion_tdi_apocalypse_threat_1
+			who = from
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.200.a"
+		# They're watching... waiting...
+	}
+}
+
+# Fallen Empire Awakening
+country_event = {
+	id = tdi_apocalypse.201
+	title = "tdi_apocalypse.201.name"
+	desc = "tdi_apocalypse.201.desc"
+	picture = GFX_evt_fallen_empire_awaken_1
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_apocalypse_awakening_triggered
+		# Awaken with purpose: DESTROY THE THREAT
+		if = {
+			limit = { NOT = { has_country_flag = fallen_empire_awakened } }
+			country_event = { id = fallen_empires_awakening.1 }
+		}
+	}
+	
+	option = {
+		name = "tdi_apocalypse.201.a"
+		# "You have forced our hand."
+	}
+}

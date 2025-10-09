@@ -1,0 +1,153 @@
+# The Final Protocol - Victory or Oblivion
+
+decision_tdi_activate_final_protocol = {
+	owned_planets_only = no
+	sound = event_aetherophasic_engine
+	icon = decision_aetherophasic_engine
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 1000
+			unity = 100000
+		}
+	}
+	
+	potential = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+		NOT = { has_country_flag = tdi_final_protocol_activated }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "decision_tdi_final_protocol_time_requirement"
+			had_country_flag = {
+				flag = tdi_ancient_apocalypse_engine_operational
+				days > 9125
+			}
+		}
+		custom_tooltip = {
+			fail_text = "decision_tdi_final_protocol_victory_requirement"
+			OR = {
+				# Must control significant portion of galaxy
+				num_owned_planets > 50
+				fleet_power > 2000000
+				# OR have killed all FEs
+				NOT = {
+					any_country = {
+						is_country_type = fallen_empire
+						is_at_war_with = root
+					}
+				}
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_tdi_final_protocol_effect
+		hidden_effect = {
+			set_country_flag = tdi_final_protocol_activated
+			country_event = { id = tdi_final_protocol.1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Apotheosis Path - Transcend Reality
+decision_tdi_apotheosis_transcend = {
+	owned_planets_only = no
+	sound = event_aetherophasic_engine
+	icon = decision_aetherophasic_engine
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 2000
+			unity = 500000
+			energy = 100000
+			sr_dark_matter = 10000
+			sr_living_metal = 10000
+			nanites = 10000
+		}
+	}
+	
+	potential = {
+		has_country_flag = tdi_final_protocol_activated
+		has_country_flag = tdi_apotheosis_path_unlocked
+		NOT = { has_country_flag = tdi_apotheosis_complete }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "decision_tdi_apotheosis_requirement"
+			# Must have completed final protocol sequence
+			has_country_flag = tdi_final_protocol_stage_5
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_tdi_apotheosis_effect
+		hidden_effect = {
+			set_country_flag = tdi_apotheosis_complete
+			# WIN CONDITION
+			country_event = { id = tdi_final_protocol.100 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+# Omnicide Path - Destroy Everything
+decision_tdi_omnicide = {
+	owned_planets_only = no
+	sound = event_aetherophasic_engine
+	icon = decision_aetherophasic_engine
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 2000
+			unity = 500000
+		}
+	}
+	
+	potential = {
+		has_country_flag = tdi_final_protocol_activated
+		has_country_flag = tdi_omnicide_path_unlocked
+		NOT = { has_country_flag = tdi_omnicide_complete }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "decision_tdi_omnicide_requirement"
+			# Must control 75%+ of galaxy or have killed everyone
+			OR = {
+				num_owned_planets > 100
+				NOT = {
+					any_country = {
+						is_country_type = default
+						NOT = { is_same_value = root }
+					}
+				}
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_tdi_omnicide_effect
+		hidden_effect = {
+			set_country_flag = tdi_omnicide_complete
+			# ALTERNATE WIN CONDITION
+			country_event = { id = tdi_final_protocol.200 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 500
+	}
+}

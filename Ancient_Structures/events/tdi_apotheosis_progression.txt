@@ -1,0 +1,312 @@
+namespace = tdi_apotheosis
+
+# Apotheosis Stage 1 - 5 Years Active
+country_event = {
+	id = tdi_apotheosis.1
+	title = "tdi_apotheosis.1.name"
+	desc = "tdi_apotheosis.1.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+		had_country_flag = {
+			flag = tdi_ancient_apocalypse_engine_operational
+			days > 1825
+		}
+	}
+	
+	immediate = {
+		set_country_flag = tdi_apotheosis_stage_1
+		
+		# Unlock first apotheosis perk
+		give_technology = { tech = tech_tdi_apotheosis_weapons_1 message = no }
+		
+		# Visual change
+		change_country_flag = {
+			icon = {
+				category = "special"
+				file = "the_contingency.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "new_dawn.dds"
+			}
+			colors = {
+				"red"
+				"black"
+				"null"
+				"null"
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_apotheosis.1.a"
+		tooltip = {
+			custom_tooltip = tdi_apotheosis_stage_1_effect
+		}
+	}
+}
+
+# Apotheosis Stage 2 - 10 Years Active
+country_event = {
+	id = tdi_apotheosis.2
+	title = "tdi_apotheosis.2.name"
+	desc = "tdi_apotheosis.2.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_1
+		had_country_flag = {
+			flag = tdi_ancient_apocalypse_engine_operational
+			days > 3650
+		}
+	}
+	
+	immediate = {
+		remove_country_flag = tdi_apotheosis_stage_1
+		set_country_flag = tdi_apotheosis_stage_2
+		
+		# Unlock more power
+		give_technology = { tech = tech_tdi_apotheosis_weapons_2 message = no }
+		give_technology = { tech = tech_tdi_apotheosis_shields message = no }
+		
+		# Empire modifiers improve
+		add_modifier = {
+			modifier = tdi_apotheosis_transformation_2
+			days = -1
+		}
+	}
+	
+	option = {
+		name = "tdi_apotheosis.2.a"
+		tooltip = {
+			custom_tooltip = tdi_apotheosis_stage_2_effect
+		}
+	}
+}
+
+# Apotheosis Stage 3 - 15 Years Active
+country_event = {
+	id = tdi_apotheosis.3
+	title = "tdi_apotheosis.3.name"
+	desc = "tdi_apotheosis.3.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_2
+		had_country_flag = {
+			flag = tdi_ancient_apocalypse_engine_operational
+			days > 5475
+		}
+	}
+	
+	immediate = {
+		remove_country_flag = tdi_apotheosis_stage_2
+		set_country_flag = tdi_apotheosis_stage_3
+		
+		# Even more power
+		give_technology = { tech = tech_tdi_apotheosis_weapons_3 message = no }
+		give_technology = { tech = tech_tdi_apotheosis_armor message = no }
+		give_technology = { tech = tech_tdi_apotheosis_drives message = no }
+		
+		# Remove previous modifier, add stronger one
+		remove_modifier = tdi_apotheosis_transformation_2
+		add_modifier = {
+			modifier = tdi_apotheosis_transformation_3
+			days = -1
+		}
+		
+		# Leader changes
+		every_owned_leader = {
+			add_trait = leader_trait_apocalypse_touched
+		}
+	}
+	
+	option = {
+		name = "tdi_apotheosis.3.a"
+		tooltip = {
+			custom_tooltip = tdi_apotheosis_stage_3_effect
+		}
+	}
+}
+
+# Apotheosis Stage 4 - 20 Years Active - CRISIS ASCENSION
+country_event = {
+	id = tdi_apotheosis.4
+	title = "tdi_apotheosis.4.name"
+	desc = "tdi_apotheosis.4.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_3
+		had_country_flag = {
+			flag = tdi_ancient_apocalypse_engine_operational
+			days > 7300
+		}
+	}
+	
+	immediate = {
+		remove_country_flag = tdi_apotheosis_stage_3
+		set_country_flag = tdi_apotheosis_stage_4
+		
+		# MAXIMUM POWER
+		give_technology = { tech = tech_tdi_apotheosis_reactor message = no }
+		give_technology = { tech = tech_tdi_apotheosis_computers message = no }
+		
+		# Final transformation
+		remove_modifier = tdi_apotheosis_transformation_3
+		add_modifier = {
+			modifier = tdi_apotheosis_crisis_form
+			days = -1
+		}
+		
+		# All leaders become immortal crisis beings
+		every_owned_leader = {
+			add_trait = leader_trait_crisis_entity
+			add_trait = leader_trait_resilient
+		}
+		
+		# Unlock final protocol path
+		set_country_flag = tdi_final_protocol_stage_5
+		set_country_flag = tdi_apotheosis_path_unlocked
+		set_country_flag = tdi_omnicide_path_unlocked
+	}
+	
+	option = {
+		name = "tdi_apotheosis.4.a"
+		tooltip = {
+			custom_tooltip = tdi_apotheosis_stage_4_effect
+		}
+	}
+}
+
+# Pop Transformation - Pops slowly become crisis entities
+event = {
+	id = tdi_apotheosis.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_2
+	}
+	
+	immediate = {
+		# Transform random pops
+		random_owned_pop = {
+			limit = {
+				NOT = { has_trait = trait_tdi_crisis_touched }
+			}
+			modify_species = {
+				species = this
+				add_trait = trait_tdi_crisis_touched
+			}
+		}
+		
+		# Continue transformation cycle
+		country_event = { id = tdi_apotheosis.100 days = 180 }
+	}
+}
+
+# Leader Ascension - Leaders gain crisis powers
+event = {
+	id = tdi_apotheosis.101
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_3
+	}
+	
+	immediate = {
+		# Buff random leader
+		random_owned_leader = {
+			limit = {
+				NOT = { has_trait = leader_trait_apocalypse_avatar }
+			}
+			add_trait = leader_trait_apocalypse_avatar
+		}
+		
+		# Continue ascension cycle
+		country_event = { id = tdi_apotheosis.101 days = 360 }
+	}
+}
+
+# Empire Metamorphosis - Visual and mechanical changes
+country_event = {
+	id = tdi_apotheosis.200
+	title = "tdi_apotheosis.200.name"
+	desc = "tdi_apotheosis.200.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_apotheosis_stage_3
+	}
+	
+	immediate = {
+		# Empire becomes crisis-like
+		set_country_type = default
+		change_country_flag = {
+			icon = {
+				category = "pointy"
+				file = "flag_pointy_14.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "new_dawn.dds"
+			}
+			colors = {
+				"dark_red"
+				"black"
+				"null"
+				"null"
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_apotheosis.200.a"
+	}
+}
+
+# Galaxy Witnesses Your Transformation
+country_event = {
+	id = tdi_apotheosis.300
+	title = "tdi_apotheosis.300.name"
+	desc = "tdi_apotheosis.300.desc"
+	picture = GFX_evt_crisis_sphere
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Add modifier showing fear
+		add_modifier = {
+			modifier = opinion_crisis_entity
+			days = -1
+		}
+	}
+	
+	option = {
+		name = "tdi_apotheosis.300.a"
+		# "They've become monsters..."
+	}
+	
+	option = {
+		name = "tdi_apotheosis.300.b"
+		trigger = {
+			has_ethic = ethic_fanatic_militarist
+		}
+		# "Then we die fighting."
+	}
+}

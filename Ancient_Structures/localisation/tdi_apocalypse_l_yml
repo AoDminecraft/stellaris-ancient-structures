@@ -1,0 +1,309 @@
+l_english:
+
+# Megastructure
+tdi_ancient_apocalypse_engine_0: "Ancient Apocalypse Engine"
+tdi_ancient_apocalypse_engine_0_DESC: "Construction platform for the Ancient Apocalypse Engine - a weapon of unimaginable power... and consequences."
+tdi_ancient_apocalypse_engine_0_MEGASTRUCTURE_DETAILS: "Some powers were left buried for a reason. This is the point of no return."
+tdi_ancient_apocalypse_engine_1: "Ancient Apocalypse Engine - Frame"
+tdi_ancient_apocalypse_engine_1_DESC: "Stage 1: The frame of the Apocalypse Engine begins to take shape. The galaxy watches nervously."
+tdi_ancient_apocalypse_engine_2: "Ancient Apocalypse Engine - Core Assembly"
+tdi_ancient_apocalypse_engine_2_DESC: "Stage 2: The dark matter core hums with malevolent energy. Diplomats across the galaxy condemn your actions."
+tdi_ancient_apocalypse_engine_3: "Ancient Apocalypse Engine - Weapon Systems"
+tdi_ancient_apocalypse_engine_3_DESC: "Stage 3: Weapon systems come online. The Fallen Empires stir from their slumber."
+tdi_ancient_apocalypse_engine_4: "Ancient Apocalypse Engine - Final Integration"
+tdi_ancient_apocalypse_engine_4_DESC: "Stage 4: Nearly complete. The galaxy mobilizes against you. There is no going back."
+tdi_ancient_apocalypse_engine_5: "Ancient Apocalypse Engine - OPERATIONAL"
+tdi_ancient_apocalypse_engine_5_DESC: "The Ancient Apocalypse Engine is fully operational. You have become the crisis. The galaxy will unite against you... or perish."
+
+# Requirements
+requires_no_existing_apocalypse_engine: "Can only build one Ancient Apocalypse Engine per empire"
+requires_ancient_headquarters_operational: "Requires operational Ancient Headquarters"
+requires_ancient_empire_unification_operational: "Requires operational Ancient Empire Unification Center"
+
+# Modifiers - Construction Stages
+tdi_apocalypse_engine_stage_1: "Apocalypse Engine: Early Construction"
+tdi_apocalypse_engine_stage_1_desc: "Our construction of a doomsday weapon has begun. The galaxy is starting to take notice."
+tdi_apocalypse_engine_stage_2: "Apocalypse Engine: Core Assembly"
+tdi_apocalypse_engine_stage_2_desc: "The weapon's power core is taking shape. Our ships already feel its influence."
+tdi_apocalypse_engine_stage_3: "Apocalypse Engine: Weapon Integration"
+tdi_apocalypse_engine_stage_3_desc: "Weapon systems are coming online. We are becoming a force to be reckoned with."
+tdi_apocalypse_engine_stage_4: "Apocalypse Engine: Final Assembly"
+tdi_apocalypse_engine_stage_4_desc: "Nearly complete. Our military might grows as the galaxy watches in horror."
+
+# Modifiers - Escalation
+tdi_apocalypse_active: "Ancient Apocalypse Engine Active"
+tdi_apocalypse_active_desc: "The Apocalypse Engine is operational. We are the crisis now."
+
+tdi_apocalypse_escalation_1: "Galactic Threat: Rising"
+tdi_apocalypse_escalation_1_desc: "The galaxy fears our power. Coalitions are forming against us."
+
+tdi_apocalypse_escalation_2: "Galactic Threat: Critical"
+tdi_apocalypse_escalation_2_desc: "The galaxy mobilizes against us. War is inevitable. Our resolve strengthens."
+
+tdi_apocalypse_escalation_3: "Galactic Threat: YOU ARE THE CRISIS"
+tdi_apocalypse_escalation_3_desc: "We have become what the galaxy fears most. There is no diplomacy, only dominance."
+
+tdi_apocalypse_escalation_4: "Galactic Threat: UNSTOPPABLE"
+tdi_apocalypse_escalation_4_desc: "The galaxy cannot stop us. We are inevitable. We are eternal. We are LEGION."
+
+# Opinion Modifiers
+opinion_tdi_apocalypse_threat_1: "Apocalypse Engine Construction"
+opinion_tdi_apocalypse_threat_1_desc: "They are building a weapon of mass destruction."
+
+opinion_tdi_apocalypse_threat_2: "Apocalypse Engine: 5 Year Threat"
+opinion_tdi_apocalypse_threat_2_desc: "This empire has operated a doomsday weapon for 5 years. They must be stopped."
+
+opinion_tdi_apocalypse_threat_3: "Apocalypse Engine: 10 Year Threat"
+opinion_tdi_apocalypse_threat_3_desc: "This empire grows more dangerous every day. They are a threat to all life."
+
+opinion_tdi_apocalypse_threat_4: "Apocalypse Engine: 15 Year Threat"
+opinion_tdi_apocalypse_threat_4_desc: "This empire IS the crisis. There can be no peace while they exist."
+
+opinion_tdi_apocalypse_threat_5: "Apocalypse Engine: EXISTENTIAL THREAT"
+opinion_tdi_apocalypse_threat_5_desc: "This empire must be destroyed at any cost. The survival of the galaxy depends on it."
+
+# Events
+tdi_apocalypse.1.name: "The Apocalypse Engine Awakens"
+tdi_apocalypse.1.desc: "The Ancient Apocalypse Engine roars to life, its reality-warping energies cascading across local space-time. Our scientists report unprecedented power signatures - this machine doesn't just destroy, it UNMAKES.\n\n§RThe galaxy will know what we have done. They will come for us. They will unite against us. But by the time they arrive... we will be UNSTOPPABLE.§!\n\nThere is no turning back now."
+tdi_apocalypse.1.a: "Let them come. We are INEVITABLE."
+
+tdi_apocalypse_no_return: "§RThe Apocalypse Engine is permanent. Every 5 years, diplomatic penalties will worsen and Fallen Empires become more likely to awaken. Victory or extinction - there is no middle ground.§!"
+
+tdi_apocalypse.10.name: "Escalation: 5 Years"
+tdi_apocalypse.10.desc: "Five years have passed since we activated the Apocalypse Engine. Intelligence reports massive fleet buildups across the galaxy. Former allies refuse our communications. Trade routes collapse as embargoes multiply.\n\nThe Fallen Empires have broken their silence. Their ambassadors speak of 'necessary measures' and 'acceptable losses.'\n\nBut we are stronger than ever. Let them come."
+tdi_apocalypse.10.a: "We did not choose this path to turn back now."
+
+tdi_apocalypse.20.name: "Escalation: 10 Years"
+tdi_apocalypse.20.desc: "A decade of isolation. A decade of war. The galaxy has united against us in ways not seen since the great crises of old.\n\nEvery system is a battlefield. Every border a warzone. Our enemies throw themselves against our fleets with suicidal determination.\n\nAnd still we grow stronger. The Apocalypse Engine feeds on the chaos, each battle making us more powerful.\n\nThe Fallen Empires watch with increasing alarm. Some speak of awakening..."
+tdi_apocalypse.20.a: "Good. Let them witness true power."
+
+tdi_apocalypse.30.name: "Escalation: 15 Years"
+tdi_apocalypse.30.desc: "Fifteen years. Entire civilizations have risen and fallen in our shadow. The galaxy burns, and we are the fire.\n\nThe Galactic Community has declared us enemies of all life. The Fallen Empires no longer watch from the sidelines - they are mobilizing. Ancient weapons not seen for millennia are being brought online.\n\nOur fleets are legend. Our name is spoken in whispers. We have become myth.\n\nAnd we are NOT finished."
+tdi_apocalypse.30.a: "Let the ancients wake. We will send them back to sleep. Permanently."
+
+tdi_apocalypse.40.name: "Escalation: 20+ Years - THE FINAL WAR"
+tdi_apocalypse.40.desc: "Twenty years since activation. The galaxy has been remade in fire and blood.\n\nThe Fallen Empires have fully awakened. Not to protect the younger races, but to destroy US. They commit fleets numbered in the thousands, technologies beyond comprehension.\n\nIt doesn't matter.\n\nWe have transcended. The Apocalypse Engine has made us into something MORE. Every system we control, every battle we win, makes us stronger still.\n\nThis is the endgame. Total victory or complete annihilation.\n\n§YThere are no other options.§!"
+tdi_apocalypse.40.a: "Then let this galaxy burn. We will build a new one from the ashes."
+
+tdi_apocalypse_endgame: "§RThe galaxy will never negotiate with you. This is total war until victory or destruction.§!"
+
+# Galaxy Reactions
+tdi_apocalypse.100.name: "[from.GetName] Has Built a Doomsday Weapon"
+tdi_apocalypse.100.desc: "Emergency transmissions flood our channels. Intelligence confirms our worst fears: [from.GetName] has constructed what our scientists call an 'Apocalypse Engine' - a megastructure of such destructive potential that it could threaten the entire galaxy.\n\nEarly reports suggest reality itself warps around the structure. Ships that venture too close report temporal anomalies and weapons malfunctions.\n\nThis cannot stand."
+tdi_apocalypse.100.a: "This is an abomination! They must be stopped!"
+tdi_apocalypse.100.b: "Impressive... and terrifying. We must prepare for war."
+tdi_apocalypse.100.c: "They have defied the natural order. The gods will judge them."
+tdi_apocalypse.100.d: "Troubling. Very troubling indeed."
+
+# Fallen Empire Reactions
+tdi_apocalypse.200.name: "The Younger Races Play With Fire"
+tdi_apocalypse.200.desc: "Sensors detect a massive energy signature from [from.GetName]'s space. Our ancient archives hold records of such weapons - devices built by civilizations long extinct, weapons that brought about their own destruction.\n\nThe younger races have unearthed something that should have remained buried. We had hoped they would be wiser.\n\nFor now, we watch. But if they threaten the stability of the galaxy...\n\nWe will act."
+tdi_apocalypse.200.a: "Let them destroy themselves. We will inherit what remains."
+
+tdi_apocalypse.201.name: "The Time Has Come"
+tdi_apocalypse.201.desc: "[from.GetName] has gone too far. Their Apocalypse Engine grows more dangerous with each passing year. Entire regions of space destabilize in its presence.\n\nWe can no longer remain passive. Our long sleep is ended.\n\n§YIt is time to remind the younger races why we are called the Fallen Empires.§!"
+tdi_apocalypse.201.a: "Mobilize the fleets. This threat ends NOW."
+
+# Technology
+tech_crisis_sphere_1: "§RForbidden Knowledge: Apocalypse Engine§!"
+tech_crisis_sphere_1_title: "Ancient Apocalypse Engine"
+tech_crisis_sphere_1_desc: "Deep within the Ancient archives lies knowledge that was sealed away for a reason. Blueprints for a weapon so powerful, so devastating, that its mere existence would threaten the stability of the galaxy.\n\n§RThis technology is DANGEROUS. Once researched, there is no going back. The galaxy will unite against you.§!"
+tech_crisis_sphere_1_effect: "§RUnlocks the Ancient Apocalypse Engine megastructure.\n\nWARNING: Building this megastructure will:\n• Make ALL empires hostile to you\n• Dramatically increase Fallen Empire awakening chances\n• Escalate diplomatic penalties every 5 years\n• Create a permanent state of total war\n\nThis is the point of no return.§!"
+tech_crisis_sphere_1_effect: "§RUnlocks the Ancient Apocalypse Engine megastructure.\n\nWARNING: Building this megastructure will:\n• Make ALL empires hostile to you\n• Dramatically increase Fallen Empire awakening chances\n• Escalate diplomatic penalties every 5 years\n• Create a permanent state of total war\n\nThis is the point of no return.§!"
+
+# Crisis Fleet Events
+tdi_apocalypse_fleets.2.name: "The Engine Stirs"
+tdi_apocalypse_fleets.2.desc: "The Apocalypse Engine pulses with malevolent energy. Our scientists report massive power surges emanating from the core.\n\nThen, impossibly, the Engine §Ycreates§!. Ships materialize from nothing, birthed from the Engine's reality-warping energies. Ancient Dreadnoughts, more weapon than ship, more nightmare than machine.\n\nThey respond to our commands, but we sense something... else guiding them. The Engine has its own will now."
+tdi_apocalypse_fleets.2.a: "Excellent. More tools for the coming war."
+tdi_apocalypse_fleets_spawn: "§YThe Apocalypse Engine will spawn Ancient Dreadnought fleets every 2 years. These fleets grow stronger over time.§!"
+
+# Reality Tear Events
+tdi_reality_tear.10.name: "Reality Tear: Wormhole Breach"
+tdi_reality_tear.10.desc: "Science teams report a catastrophic spatial anomaly in the [chaos_system.GetName] system. Space itself is §Rtearing apart§!, creating an unstable wormhole that shouldn't exist.\n\nThe Apocalypse Engine's influence spreads. Reality breaks down wherever its power touches."
+tdi_reality_tear.10.a: "Fascinating. Horrifying, but fascinating."
+reality_tear_wormhole_effect: "§YA natural wormhole has spawned in this system.§!"
+
+tdi_reality_tear.20.name: "Reality Tear: Void Horror Incursion"
+tdi_reality_tear.20.desc: "Emergency transmission from [chaos_system.GetName]:\n\n'...things coming through the tears... not from our dimension... they're §Rhungry§!...'\n\nCreatures from between realities pour through the cracks the Engine has made. They attack everything - ours and enemy alike."
+tdi_reality_tear.20.a: "Deal with them. We have larger concerns."
+reality_tear_monsters_effect: "§RHostile entities have spawned in this system.§!"
+
+tdi_reality_tear.30.name: "Reality Tear: Solar Instability"
+tdi_reality_tear.30.desc: "Astrophysicists are in a panic. The star in [chaos_system.GetName] is behaving... impossibly. Exhibiting properties that violate known physics.\n\nThe Engine's influence corrupts even stars. Colonies in the system report increased radiation, solar storms, and equipment malfunctions."
+tdi_reality_tear.30.a: "The Engine's power knows no limits."
+reality_tear_star_effect: "§RThe star has become unstable. Ships and colonies in this system will suffer penalties.§!"
+
+tdi_reality_tear.40.name: "Reality Tear: Dimensional Breach"
+tdi_reality_tear.40.desc: "Something terrible has happened in [chaos_system.GetName]. A §Rpermanent breach§! between dimensions has opened.\n\nOur crews report seeing... things... in the void between realities. Things that should not exist. Things that are AWARE of us."
+tdi_reality_tear.40.a: "Let them watch. Soon they will kneel."
+reality_tear_dimensional_effect: "§RA dimensional breach has opened. Trade and stability in this system will suffer.§!"
+
+# Rival Crisis Events
+tdi_rival_crisis.1.name: "Dangerous Inspiration"
+tdi_rival_crisis.1.desc: "Intelligence reports indicate [from.GetName] has been studying data on the Apocalypse Engine. Their scientists are discussing... possibilities.\n\nThey wouldn't dare. Would they?"
+
+tdi_rival_crisis.10.name: "We Have No Choice"
+tdi_rival_crisis.10.desc: "The galaxy unites against us. [from.GetName] builds their doomsday weapon. Our only hope for survival is to build our own.\n\nMay the gods forgive us for what we're about to unleash."
+
+tdi_rival_crisis.100.name: "[from.GetName] Constructs Apocalypse Engine"
+tdi_rival_crisis.100.desc: "PRIORITY ALERT:\n\n[from.GetName] has begun construction of their own Apocalypse Engine. Intelligence suggests they're accelerating the timeline, cutting corners on safety protocols.\n\nTwo Engines. Two civilizations. One galaxy.\n\n§RThis cannot end well.§!"
+tdi_rival_crisis.100.a: "The arms race begins."
+tdi_rival_crisis.100.b: "There can be only ONE Engine. Destroy theirs."
+
+tdi_rival_crisis.201.name: "Reality Collapse Warning"
+tdi_rival_crisis.201.desc: "§REMERGENCY TRANSMISSION FROM ALL SCIENCE ACADEMIES:§!\n\nMultiple Apocalypse Engines operating simultaneously is causing §Rcatastrophic reality destabilization§!. Wormholes open randomly. Stars die spontaneously. Planets vanish.\n\nThe universe itself is BREAKING.\n\nUnless one Engine is destroyed, total reality collapse is inevitable."
+tdi_rival_crisis.201.a: "Then we must act. Fast."
+multiple_engines_reality_collapse: "§RWhile multiple Apocalypse Engines exist, random destructive events will occur galaxy-wide.§!"
+
+# Apotheosis Events
+tdi_apotheosis.1.name: "Apotheosis Stage 1: The Awakening"
+tdi_apotheosis.1.desc: "Something is changing. Our scientists, our leaders, our very §Ypeople§! report... sensations. Visions. Powers.\n\nThe Engine is not just a weapon. It's a §Ytransformation device§!. Its energies are remaking us, evolving us into something... more.\n\nSome call it a gift. Others, a curse. But there's no stopping it now."
+tdi_apotheosis.1.a: "We embrace the change. We will become gods."
+tdi_apotheosis_stage_1_effect: "§YYou have unlocked Tier 1 Apotheosis weapons. Your empire flag has changed to reflect your transformation.§!"
+
+tdi_apotheosis.2.name: "Apotheosis Stage 2: The Metamorphosis"
+tdi_apotheosis.2.desc: "The transformation accelerates. Our people no longer resemble what they were. Stronger, faster, more resilient - but also more... alien.\n\nCitizens report dreams of §Ydestroying stars§!, of §Yconsuming worlds§!. The Engine whispers to us, shows us what we could become.\n\nWe are leaving our old selves behind."
+tdi_apotheosis.2.a: "Good. We were weak before. Now we are STRONG."
+tdi_apotheosis_stage_2_effect: "§YYou have unlocked Tier 2 Apotheosis weapons and shields. Your ships are transforming.§!"
+
+tdi_apotheosis.3.name: "Apotheosis Stage 3: The Ascension"
+tdi_apotheosis.3.desc: "We are no longer the species we once were. Our leaders are §Yimmortal§!. Our people transcend biological limitations. We exist partially outside normal reality.\n\nThe galaxy looks at us with §Rterror§!. They don't understand. They CAN'T understand. They're still §Ymortal§!.\n\nWe pity them."
+tdi_apotheosis.3.a: "We are beyond them now. Always were, really."
+tdi_apotheosis_stage_3_effect: "§YYou have unlocked Tier 3 weapons, armor, and drives. All leaders gain the 'Apocalypse Touched' trait.§!"
+
+tdi_apotheosis.4.name: "Apotheosis Stage 4: CRISIS FORM"
+tdi_apotheosis.4.desc: "We have become what the galaxy feared most. We are the Crisis. We are the End. We are §YINEVITABLE§!.\n\nOur leaders are immortal god-beings. Our ships are invincible. Our will is absolute.\n\nThe Final Protocol is ready. It's time to choose: §YTranscend this reality§!, or §Rdestroy it entirely§!.\n\nEither way, this galaxy will never be the same."
+tdi_apotheosis.4.a: "We are ready. Let the endgame begin."
+tdi_apotheosis_stage_4_effect: "§YYou have achieved CRISIS FORM. Maximum power unlocked. All leaders become immortal crisis entities. The Final Protocol paths are now available.§!"
+
+tdi_apotheosis.200.name: "The Empire Transformed"
+tdi_apotheosis.200.desc: "Looking at the galaxy map, you barely recognize your own empire. The colors are different. The symbols alien. Your people transformed beyond recognition.\n\nYou have become the monster the galaxy always feared you'd be.\n\nAnd you've never felt more powerful."
+tdi_apotheosis.200.a: "Perfect."
+
+tdi_apotheosis.300.name: "[from.GetName] Has Become... Something Else"
+tdi_apotheosis.300.desc: "Our observers in [from.GetName] space report... impossible things. Their people don't look biological anymore. Their ships phase in and out of reality. Their leaders are §Rimmortal entities§! of pure malevolence.\n\nThey're not an empire anymore. They're a §Rcrisis§!."
+tdi_apotheosis.300.a: "May the gods have mercy on us all."
+tdi_apotheosis.300.b: "Then we fight the gods themselves if we must!"
+
+# Final Protocol Events
+tdi_final_protocol.1.name: "THE FINAL PROTOCOL"
+tdi_final_protocol.1.desc: "Twenty-five years. Twenty-five years since we activated the Engine. Twenty-five years of war, transformation, and ascension.\n\nNow, the Engine speaks to us directly. It offers a choice:\n\n§Y'TRANSCEND THIS REALITY. BECOME AS GODS. LEAVE THIS UNIVERSE BEHIND.'§!\n\nOr:\n\n§R'UNMAKE EVERYTHING. BECOME THE END. DESTROY ALL THAT IS.'§!\n\nThe countdown begins. Reality itself holds its breath."
+tdi_final_protocol.1.a: "So be it. Let the universe witness our ascension."
+tdi_final_protocol_sequence_start: "§YThe Final Protocol sequence has begun. Over the next 5 years, reality will destabilize as the Engine prepares for its ultimate function.§!"
+
+tdi_final_protocol.2.name: "Final Protocol: Energy Surge"
+tdi_final_protocol.2.desc: "The Engine draws power from... somewhere. Everywhere. The fabric of space-time bends toward it, feeding it limitless energy.\n\nOur power grid overloads with excess energy. The Engine simply... gives it to us."
+tdi_final_protocol.2.a: "Unlimited power!"
+
+tdi_final_protocol.3.name: "Final Protocol: Reality Fractures"
+tdi_final_protocol.3.desc: "Reality is breaking. Systems throughout our empire report spatial anomalies, temporal distortions, dimensional breaches.\n\nThe Engine is pulling this entire region of space out of sync with normal reality.l_english:
+
+# Megastructure
+tdi_ancient_apocalypse_engine_0: "Ancient Apocalypse Engine"
+tdi_ancient_apocalypse_engine_0_DESC: "Construction platform for the Ancient Apocalypse Engine - a weapon of unimaginable power... and consequences."
+tdi_ancient_apocalypse_engine_0_MEGASTRUCTURE_DETAILS: "Some powers were left buried for a reason. This is the point of no return."
+tdi_ancient_apocalypse_engine_1: "Ancient Apocalypse Engine - Frame"
+tdi_ancient_apocalypse_engine_1_DESC: "Stage 1: The frame of the Apocalypse Engine begins to take shape. The galaxy watches nervously."
+tdi_ancient_apocalypse_engine_2: "Ancient Apocalypse Engine - Core Assembly"
+tdi_ancient_apocalypse_engine_2_DESC: "Stage 2: The dark matter core hums with malevolent energy. Diplomats across the galaxy condemn your actions."
+tdi_ancient_apocalypse_engine_3: "Ancient Apocalypse Engine - Weapon Systems"
+tdi_ancient_apocalypse_engine_3_DESC: "Stage 3: Weapon systems come online. The Fallen Empires stir from their slumber."
+tdi_ancient_apocalypse_engine_4: "Ancient Apocalypse Engine - Final Integration"
+tdi_ancient_apocalypse_engine_4_DESC: "Stage 4: Nearly complete. The galaxy mobilizes against you. There is no going back."
+tdi_ancient_apocalypse_engine_5: "Ancient Apocalypse Engine - OPERATIONAL"
+tdi_ancient_apocalypse_engine_5_DESC: "The Ancient Apocalypse Engine is fully operational. You have become the crisis. The galaxy will unite against you... or perish."
+
+# Requirements
+requires_no_existing_apocalypse_engine: "Can only build one Ancient Apocalypse Engine per empire"
+requires_ancient_headquarters_operational: "Requires operational Ancient Headquarters"
+requires_ancient_empire_unification_operational: "Requires operational Ancient Empire Unification Center"
+
+# Modifiers - Construction Stages
+tdi_apocalypse_engine_stage_1: "Apocalypse Engine: Early Construction"
+tdi_apocalypse_engine_stage_1_desc: "Our construction of a doomsday weapon has begun. The galaxy is starting to take notice."
+tdi_apocalypse_engine_stage_2: "Apocalypse Engine: Core Assembly"
+tdi_apocalypse_engine_stage_2_desc: "The weapon's power core is taking shape. Our ships already feel its influence."
+tdi_apocalypse_engine_stage_3: "Apocalypse Engine: Weapon Integration"
+tdi_apocalypse_engine_stage_3_desc: "Weapon systems are coming online. We are becoming a force to be reckoned with."
+tdi_apocalypse_engine_stage_4: "Apocalypse Engine: Final Assembly"
+tdi_apocalypse_engine_stage_4_desc: "Nearly complete. Our military might grows as the galaxy watches in horror."
+
+# Modifiers - Escalation
+tdi_apocalypse_active: "Ancient Apocalypse Engine Active"
+tdi_apocalypse_active_desc: "The Apocalypse Engine is operational. We are the crisis now."
+
+tdi_apocalypse_escalation_1: "Galactic Threat: Rising"
+tdi_apocalypse_escalation_1_desc: "The galaxy fears our power. Coalitions are forming against us."
+
+tdi_apocalypse_escalation_2: "Galactic Threat: Critical"
+tdi_apocalypse_escalation_2_desc: "The galaxy mobilizes against us. War is inevitable. Our resolve strengthens."
+
+tdi_apocalypse_escalation_3: "Galactic Threat: YOU ARE THE CRISIS"
+tdi_apocalypse_escalation_3_desc: "We have become what the galaxy fears most. There is no diplomacy, only dominance."
+
+tdi_apocalypse_escalation_4: "Galactic Threat: UNSTOPPABLE"
+tdi_apocalypse_escalation_4_desc: "The galaxy cannot stop us. We are inevitable. We are eternal. We are LEGION."
+
+# Opinion Modifiers
+opinion_tdi_apocalypse_threat_1: "Apocalypse Engine Construction"
+opinion_tdi_apocalypse_threat_1_desc: "They are building a weapon of mass destruction."
+
+opinion_tdi_apocalypse_threat_2: "Apocalypse Engine: 5 Year Threat"
+opinion_tdi_apocalypse_threat_2_desc: "This empire has operated a doomsday weapon for 5 years. They must be stopped."
+
+opinion_tdi_apocalypse_threat_3: "Apocalypse Engine: 10 Year Threat"
+opinion_tdi_apocalypse_threat_3_desc: "This empire grows more dangerous every day. They are a threat to all life."
+
+opinion_tdi_apocalypse_threat_4: "Apocalypse Engine: 15 Year Threat"
+opinion_tdi_apocalypse_threat_4_desc: "This empire IS the crisis. There can be no peace while they exist."
+
+opinion_tdi_apocalypse_threat_5: "Apocalypse Engine: EXISTENTIAL THREAT"
+opinion_tdi_apocalypse_threat_5_desc: "This empire must be destroyed at any cost. The survival of the galaxy depends on it."
+
+# Events
+tdi_apocalypse.1.name: "The Apocalypse Engine Awakens"
+tdi_apocalypse.1.desc: "The Ancient Apocalypse Engine roars to life, its reality-warping energies cascading across local space-time. Our scientists report unprecedented power signatures - this machine doesn't just destroy, it UNMAKES.\n\n§RThe galaxy will know what we have done. They will come for us. They will unite against us. But by the time they arrive... we will be UNSTOPPABLE.§!\n\nThere is no turning back now."
+tdi_apocalypse.1.a: "Let them come. We are INEVITABLE."
+
+tdi_apocalypse_no_return: "§RThe Apocalypse Engine is permanent. Every 5 years, diplomatic penalties will worsen and Fallen Empires become more likely to awaken. Victory or extinction - there is no middle ground.§!"
+
+tdi_apocalypse.10.name: "Escalation: 5 Years"
+tdi_apocalypse.10.desc: "Five years have passed since we activated the Apocalypse Engine. Intelligence reports massive fleet buildups across the galaxy. Former allies refuse our communications. Trade routes collapse as embargoes multiply.\n\nThe Fallen Empires have broken their silence. Their ambassadors speak of 'necessary measures' and 'acceptable losses.'\n\nBut we are stronger than ever. Let them come."
+tdi_apocalypse.10.a: "We did not choose this path to turn back now."
+
+tdi_apocalypse.20.name: "Escalation: 10 Years"
+tdi_apocalypse.20.desc: "A decade of isolation. A decade of war. The galaxy has united against us in ways not seen since the great crises of old.\n\nEvery system is a battlefield. Every border a warzone. Our enemies throw themselves against our fleets with suicidal determination.\n\nAnd still we grow stronger. The Apocalypse Engine feeds on the chaos, each battle making us more powerful.\n\nThe Fallen Empires watch with increasing alarm. Some speak of awakening..."
+tdi_apocalypse.20.a: "Good. Let them witness true power."
+
+tdi_apocalypse.30.name: "Escalation: 15 Years"
+tdi_apocalypse.30.desc: "Fifteen years. Entire civilizations have risen and fallen in our shadow. The galaxy burns, and we are the fire.\n\nThe Galactic Community has declared us enemies of all life. The Fallen Empires no longer watch from the sidelines - they are mobilizing. Ancient weapons not seen for millennia are being brought online.\n\nOur fleets are legend. Our name is spoken in whispers. We have become myth.\n\nAnd we are NOT finished."
+tdi_apocalypse.30.a: "Let the ancients wake. We will send them back to sleep. Permanently."
+
+tdi_apocalypse.40.name: "Escalation: 20+ Years - THE FINAL WAR"
+tdi_apocalypse.40.desc: "Twenty years since activation. The galaxy has been remade in fire and blood.\n\nThe Fallen Empires have fully awakened. Not to protect the younger races, but to destroy US. They commit fleets numbered in the thousands, technologies beyond comprehension.\n\nIt doesn't matter.\n\nWe have transcended. The Apocalypse Engine has made us into something MORE. Every system we control, every battle we win, makes us stronger still.\n\nThis is the endgame. Total victory or complete annihilation.\n\n§YThere are no other options.§!"
+tdi_apocalypse.40.a: "Then let this galaxy burn. We will build a new one from the ashes."
+
+tdi_apocalypse_endgame: "§RThe galaxy will never negotiate with you. This is total war until victory or destruction.§!"
+
+# Galaxy Reactions
+tdi_apocalypse.100.name: "[from.GetName] Has Built a Doomsday Weapon"
+tdi_apocalypse.100.desc: "Emergency transmissions flood our channels. Intelligence confirms our worst fears: [from.GetName] has constructed what our scientists call an 'Apocalypse Engine' - a megastructure of such destructive potential that it could threaten the entire galaxy.\n\nEarly reports suggest reality itself warps around the structure. Ships that venture too close report temporal anomalies and weapons malfunctions.\n\nThis cannot stand."
+tdi_apocalypse.100.a: "This is an abomination! They must be stopped!"
+tdi_apocalypse.100.b: "Impressive... and terrifying. We must prepare for war."
+tdi_apocalypse.100.c: "They have defied the natural order. The gods will judge them."
+tdi_apocalypse.100.d: "Troubling. Very troubling indeed."
+
+# Fallen Empire Reactions
+tdi_apocalypse.200.name: "The Younger Races Play With Fire"
+tdi_apocalypse.200.desc: "Sensors detect a massive energy signature from [from.GetName]'s space. Our ancient archives hold records of such weapons - devices built by civilizations long extinct, weapons that brought about their own destruction.\n\nThe younger races have unearthed something that should have remained buried. We had hoped they would be wiser.\n\nFor now, we watch. But if they threaten the stability of the galaxy...\n\nWe will act."
+tdi_apocalypse.200.a: "Let them destroy themselves. We will inherit what remains."
+
+tdi_apocalypse.201.name: "The Time Has Come"
+tdi_apocalypse.201.desc: "[from.GetName] has gone too far. Their Apocalypse Engine grows more dangerous with each passing year. Entire regions of space destabilize in its presence.\n\nWe can no longer remain passive. Our long sleep is ended.\n\n§YIt is time to remind the younger races why we are called the Fallen Empires.§!"
+tdi_apocalypse.201.a: "Mobilize the fleets. This threat ends NOW."
+
+# Technology
+tech_crisis_sphere_1: "§RForbidden Knowledge: Apocalypse Engine§!"
+tech_crisis_sphere_1_title: "Ancient Apocalypse Engine"
+tech_crisis_sphere_1_desc: "Deep within the Ancient archives lies knowledge that was sealed away for a reason. Blueprints for a weapon so powerful, so devastating, that its mere existence would threaten the stability of the galaxy.\n\n§RThis technology is DANGEROUS. Once researched, there is no going back. The galaxy will unite against you.§!"
+tech_crisis_sphere_1_effect: "§RUnlocks the Ancient Apocalypse Engine megastructure.\n\nWARNING: Building this megastructure will:\n• Make ALL empires hostile to you\n• Dramatically increase Fallen Empire awakening chances\n• Escalate diplomatic penalties every 5 years\n• Create a permanent state of total war\n\nThis is the point of no return.§!"

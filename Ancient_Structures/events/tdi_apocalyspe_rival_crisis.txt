@@ -1,0 +1,208 @@
+namespace = tdi_rival_crisis
+
+# AI Sees Your Engine and Gets Ideas
+country_event = {
+	id = tdi_rival_crisis.1
+	title = "tdi_rival_crisis.1.name"
+	desc = "tdi_rival_crisis.1.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		is_ai = yes
+		NOT = { has_country_flag = tdi_rival_crisis_considering }
+		has_technology = tech_crisis_sphere_1
+		# Must be powerful enough
+		fleet_power > 500000
+		# Must have resources
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 100000
+		}
+	}
+	
+	immediate = {
+		set_country_flag = tdi_rival_crisis_considering
+		
+		# Chance to start building their own
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 2
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+				country_event = { id = tdi_rival_crisis.10 days = 360 }
+			}
+			70 = {
+				# Too scared to try
+			}
+		}
+	}
+	
+	option = {
+		name = "tdi_rival_crisis.1.a"
+	}
+}
+
+# AI Starts Building Their Own Engine
+country_event = {
+	id = tdi_rival_crisis.10
+	title = "tdi_rival_crisis.10.name"
+	desc = "tdi_rival_crisis.10.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_rival_building_apocalypse_engine
+		
+		# Find a system to build in
+		random_owned_starbase = {
+			limit = {
+				solar_system = {
+					has_no_non_gate_megastructure = yes
+				}
+			}
+			solar_system = {
+				# Auto-build the engine (AI cheat)
+				create_megastructure = {
+					type = tdi_ancient_apocalypse_engine_0
+					owner = root
+				}
+			}
+		}
+		
+		# Notify the player
+		every_country = {
+			limit = {
+				is_country_type = default
+				is_ai = no
+			}
+			country_event = { id = tdi_rival_crisis.100 }
+		}
+	}
+	
+	option = {
+		name = "tdi_rival_crisis.10.a"
+	}
+}
+
+# Player Notification: AI Building Engine
+country_event = {
+	id = tdi_rival_crisis.100
+	title = "tdi_rival_crisis.100.name"
+	desc = "tdi_rival_crisis.100.desc"
+	picture = GFX_evt_crisis_sphere
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_rival_crisis.100.a"
+		# Oh no, competition!
+	}
+	
+	option = {
+		name = "tdi_rival_crisis.100.b"
+		trigger = {
+			has_country_flag = tdi_ancient_apocalypse_engine_operational
+		}
+		# "There can be only one."
+	}
+}
+
+# Multiple Engines = Reality Collapse Risk
+event = {
+	id = tdi_rival_crisis.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		# Count active engines
+		count_megastructure = {
+			type = tdi_ancient_apocalypse_engine_5
+			count > 1
+		}
+	}
+	
+	immediate = {
+		# Reality is breaking down
+		every_country = {
+			limit = { is_country_type = default }
+			country_event = { id = tdi_rival_crisis.201 }
+		}
+		
+		# Random galaxy-wide chaos
+		random_list = {
+			25 = {
+				# Stars start dying
+				random_system = {
+					limit = { has_star = yes }
+					star = {
+						add_modifier = {
+							modifier = tdi_star_dying
+							days = -1
+						}
+					}
+				}
+			}
+			25 = {
+				# Wormholes everywhere
+				random_system = {
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+					}
+				}
+			}
+			25 = {
+				# Random planets explode
+				random_galaxy_planet = {
+					limit = { is_colony = no }
+					destroy_colony = yes
+				}
+			}
+			25 = {
+				# Dimensional horrors spawn everywhere
+				random_system = {
+					create_ambient_object = {
+						type = "dimensional_horror_spawn_object"
+						location = this
+					}
+				}
+			}
+		}
+		
+		# Check again in 1 year
+		country_event = { id = tdi_rival_crisis.200 days = 365 }
+	}
+}
+
+# Reality Collapse Warning
+country_event = {
+	id = tdi_rival_crisis.201
+	title = "tdi_rival_crisis.201.name"
+	desc = "tdi_rival_crisis.201.desc"
+	picture = GFX_evt_dimensional_Horror
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_rival_crisis.201.a"
+		tooltip = {
+			custom_tooltip = multiple_engines_reality_collapse
+		}
+	}
+}

@@ -1,0 +1,315 @@
+# Construction Stage Modifiers - Building the Nightmare
+
+tdi_apocalypse_engine_stage_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Early warnings
+	diplo_weight_mult = -0.10
+}
+
+tdi_apocalypse_engine_stage_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Galaxy is watching
+	diplo_weight_mult = -0.20
+	ship_fire_rate_mult = 0.10
+	ship_weapon_damage = 0.10
+}
+
+tdi_apocalypse_engine_stage_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Things are getting serious
+	diplo_weight_mult = -0.30
+	ship_fire_rate_mult = 0.20
+	ship_weapon_damage = 0.20
+	ship_hull_mult = 0.25
+}
+
+tdi_apocalypse_engine_stage_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Almost there...
+	diplo_weight_mult = -0.40
+	ship_fire_rate_mult = 0.35
+	ship_weapon_damage = 0.35
+	ship_hull_mult = 0.50
+	country_naval_cap_add = 1000
+}
+
+# Escalation Modifiers - Every 5 Years Gets Worse
+
+tdi_apocalypse_active = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+}
+
+tdi_apocalypse_escalation_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 5 Years - Galaxy fears you
+}
+
+tdi_apocalypse_escalation_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 10 Years - Galaxy mobilizes against you
+	country_unity_produces_mult = 0.10
+}
+
+tdi_apocalypse_escalation_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 15 Years - You are the crisis
+	country_unity_produces_mult = 0.20
+	country_influence_produces_add = 100
+}
+
+tdi_apocalypse_escalation_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 20+ Years - Unstoppable
+	country_unity_produces_mult = 0.30
+	country_influence_produces_add = 200
+	ship_weapon_damage = 0.10
+}
+
+# Opinion Modifiers for Other Empires
+
+opinion_tdi_apocalypse_threat_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_5 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+# Construction Stage Modifiers - Building the Nightmare
+
+tdi_apocalypse_engine_stage_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Early warnings
+	diplo_weight_mult = -0.10
+}
+
+tdi_apocalypse_engine_stage_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Galaxy is watching
+	diplo_weight_mult = -0.20
+	ship_fire_rate_mult = 0.10
+	ship_weapon_damage = 0.10
+}
+
+tdi_apocalypse_engine_stage_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Things are getting serious
+	diplo_weight_mult = -0.30
+	ship_fire_rate_mult = 0.20
+	ship_weapon_damage = 0.20
+	ship_hull_mult = 0.25
+}
+
+tdi_apocalypse_engine_stage_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+	
+	# Almost there...
+	diplo_weight_mult = -0.40
+	ship_fire_rate_mult = 0.35
+	ship_weapon_damage = 0.35
+	ship_hull_mult = 0.50
+	country_naval_cap_add = 1000
+}
+
+# Escalation Modifiers - Every 5 Years Gets Worse
+
+tdi_apocalypse_active = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 2
+}
+
+tdi_apocalypse_escalation_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 5 Years - Galaxy fears you
+}
+
+tdi_apocalypse_escalation_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 10 Years - Galaxy mobilizes against you
+	country_unity_produces_mult = 0.10
+}
+
+tdi_apocalypse_escalation_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 15 Years - You are the crisis
+	country_unity_produces_mult = 0.20
+	country_influence_produces_add = 100
+}
+
+tdi_apocalypse_escalation_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+	
+	# 20+ Years - Unstoppable
+	country_unity_produces_mult = 0.30
+	country_influence_produces_add = 200
+	ship_weapon_damage = 0.10
+}
+
+# Opinion Modifiers for Other Empires
+
+opinion_tdi_apocalypse_threat_1 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_4 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+opinion_tdi_apocalypse_threat_5 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}
+
+# Reality Tear Modifiers
+
+tdi_unstable_star = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	icon_frame = 3
+	
+	ship_speed_mult = -0.25
+	ship_emergency_ftl_min_days_mult = 0.50
+	ship_weapon_damage = -0.15
+}
+
+tdi_solar_storm_damage = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	icon_frame = 3
+	
+	pop_amenities_usage_mult = 0.25
+	pop_housing_usage_mult = 0.15
+	planet_jobs_produces_mult = -0.10
+}
+
+tdi_dimensional_breach = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	icon_frame = 3
+	
+	starbase_trade_protection_add = -20
+	trade_value_mult = -0.50
+	pop_happiness = -0.15
+}
+
+tdi_star_dying = {
+	icon = "gfx/interface/icons/modifiers/mod_pop_happiness.dds"
+	icon_frame = 3
+	
+	ship_speed_mult = -0.50
+	pop_environment_tolerance = -0.25
+	planet_jobs_produces_mult = -0.25
+}
+
+# Apotheosis Transformation Modifiers
+
+tdi_apotheosis_transformation_2 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 1
+	
+	ship_hull_mult = 0.25
+	ship_armor_mult = 0.25
+	ship_fire_rate_mult = 0.10
+	pop_growth_speed = -0.15
+	planet_stability_add = -10
+}
+
+tdi_apotheosis_transformation_3 = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 1
+	
+	ship_hull_mult = 0.50
+	ship_armor_mult = 0.50
+	ship_shield_mult = 0.50
+	ship_fire_rate_mult = 0.25
+	ship_weapon_damage = 0.25
+	pop_growth_speed = -0.30
+	planet_stability_add = -20
+	pop_amenities_usage_mult = 0.50
+}
+
+tdi_apotheosis_crisis_form = {
+	icon = "gfx/interface/icons/modifiers/mod_country_government_civic_points_add.dds"
+	icon_frame = 1
+	
+	ship_hull_mult = 1.00
+	ship_armor_mult = 1.00
+	ship_shield_mult = 1.00
+	ship_fire_rate_mult = 0.50
+	ship_weapon_damage = 0.50
+	ship_speed_mult = 0.25
+	ship_evasion_mult = 0.25
+	country_naval_cap_mult = 0.50
+	country_command_limit_mult = 0.50
+	
+	pop_growth_speed = -0.50
+	planet_stability_add = -30
+	pop_amenities_usage_mult = 1.00
+	pop_happiness = -0.20
+	
+	all_technology_research_speed = 0.50
+	country_unity_produces_mult = 1.00
+	country_influence_produces_mult = 1.00
+}
+
+opinion_crisis_entity = {
+	icon = "gfx/interface/icons/modifiers/mod_country_war_exhaustion_gain.dds"
+	icon_frame = 3
+}

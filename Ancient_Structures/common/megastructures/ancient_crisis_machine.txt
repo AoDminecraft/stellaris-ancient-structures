@@ -1,0 +1,331 @@
+# Ancient Apocalypse Engine - The Point of No Return
+tdi_ancient_apocalypse_engine_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 50000
+			minerals = 50000
+			alloys = 50000
+			influence = 500
+		}
+	}
+
+	potential = {
+		is_ai = no
+	}
+
+	prerequisites = { "tech_crisis_sphere_1" }
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_apocalypse_engine"
+			from = { NOT = { has_country_flag = built_tdi_ancient_apocalypse_engine } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_ancient_headquarters_operational"
+			from = { has_country_flag = tdi_ancient_headquarters_operational }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ancient_empire_unification_operational"
+			from = { has_country_flag = tdi_ancient_empire_unification_operational }
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+
+	on_build_start = {
+		fromfrom = {
+			set_star_flag = tdi_apocalypse_engine_construction_started
+		}
+	}
+	on_build_cancel = {
+		fromfrom = {
+			remove_star_flag = tdi_apocalypse_engine_construction_started
+		}
+	}
+	on_build_complete = {
+		fromfrom = {
+			set_star_flag = built_tdi_ancient_apocalypse_engine
+		}
+		from = { 
+			set_country_flag = built_tdi_ancient_apocalypse_engine
+			set_country_flag = tdi_apocalypse_path_begun
+		}
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+		}
+	}
+}
+
+# Ancient Apocalypse Engine Frame
+tdi_ancient_apocalypse_engine_1 = {
+	entity = "crisis_sphere_1_entity"
+	construction_entity = "crisis_sphere_1_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 50000
+			minerals = 50000
+			alloys = 50000
+			influence = 250
+		}
+	}
+
+	upgrade_from = {
+		tdi_ancient_apocalypse_engine_0
+	}
+
+	on_build_complete = {
+		from = {
+			add_modifier = {
+				modifier = tdi_apocalypse_engine_stage_1
+				days = -1
+			}
+		}
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+	}
+}
+
+# Partial Ancient Apocalypse Engine
+tdi_ancient_apocalypse_engine_2 = {
+	entity = "crisis_sphere_2_entity"
+	construction_entity = "crisis_sphere_2_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 50000
+			minerals = 50000
+			alloys = 50000
+			sr_dark_matter = 1000
+			influence = 250
+		}
+	}
+
+	upgrade_from = {
+		tdi_ancient_apocalypse_engine_1
+	}
+
+	on_build_complete = {
+		from = {
+			remove_modifier = tdi_apocalypse_engine_stage_1
+			add_modifier = {
+				modifier = tdi_apocalypse_engine_stage_2
+				days = -1
+			}
+		}
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+	}
+}
+
+# Partial Ancient Apocalypse Engine
+tdi_ancient_apocalypse_engine_3 = {
+	entity = "crisis_sphere_3_entity"
+	construction_entity = "crisis_sphere_3_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 50000
+			minerals = 50000
+			alloys = 50000
+			sr_dark_matter = 2000
+			sr_living_metal = 1000
+			influence = 250
+		}
+	}
+
+	upgrade_from = {
+		tdi_ancient_apocalypse_engine_2
+	}
+
+	on_build_complete = {
+		from = {
+			remove_modifier = tdi_apocalypse_engine_stage_2
+			add_modifier = {
+				modifier = tdi_apocalypse_engine_stage_3
+				days = -1
+			}
+		}
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+	}
+}
+
+# Partial Ancient Apocalypse Engine
+tdi_ancient_apocalypse_engine_4 = {
+	entity = "crisis_sphere_4_entity"
+	construction_entity = "crisis_sphere_4_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 50000
+			minerals = 50000
+			alloys = 50000
+			sr_dark_matter = 3000
+			sr_living_metal = 2000
+			nanites = 1000
+			influence = 250
+		}
+	}
+
+	upgrade_from = {
+		tdi_ancient_apocalypse_engine_3
+	}
+
+	on_build_complete = {
+		from = {
+			remove_modifier = tdi_apocalypse_engine_stage_3
+			add_modifier = {
+				modifier = tdi_apocalypse_engine_stage_4
+				days = -1
+			}
+		}
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+	}
+}
+
+# Operational Ancient Apocalypse Engine - THE POINT OF NO RETURN
+tdi_ancient_apocalypse_engine_5 = {
+	entity = "crisis_sphere_5_entity"
+	construction_entity = "crisis_sphere_5_construction_entity"
+	portrait = "GFX_megastructure_aetherophasic_engine_background"
+	build_time = 3600
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 100000
+			minerals = 100000
+			alloys = 100000
+			sr_dark_matter = 5000
+			sr_living_metal = 5000
+			nanites = 5000
+			sr_zro = 2000
+			influence = 1000
+		}
+
+		# I AM BECOME DEATH - PRODUCTION
+		produces = {
+			alloys = 15000
+			sr_dark_matter = 200
+			sr_living_metal = 200
+			nanites = 200
+		}
+	}
+
+	# I AM BECOME DEATH - MODIFIERS
+	country_modifier = {
+		# Military Supremacy
+		ship_fire_rate_mult = 0.50
+		ship_weapon_damage = 0.50
+		ship_hull_mult = 1.00
+		ship_armor_mult = 0.50
+		ship_shield_mult = 0.50
+		army_damage_mult = 0.50
+		country_naval_cap_add = 5000
+		command_limit_add = 100
+		
+		# Economic Dominance
+		all_technology_research_speed = 0.25
+		edict_fund_add = 10
+		edict_length_mult = 1.00
+		country_influence_produces_add = 500
+		country_unity_produces_mult = 0.50
+		
+		# Crisis Resources
+		country_resource_max_add = 1000000
+		
+		# The Price of Power
+		diplo_weight_mult = -0.50
+	}
+
+	upgrade_from = {
+		tdi_ancient_apocalypse_engine_4
+	}
+
+	on_build_complete = {
+		from = {
+			remove_modifier = tdi_apocalypse_engine_stage_4
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = tdi_ancient_apocalypse_engine_operational
+			set_timed_country_flag = {
+				flag = tdi_apocalypse_engine_immunity
+				days = 1825
+			}
+			
+			# Start the escalation
+			country_event = { id = tdi_apocalypse.1 }
+		}
+
+		every_system_planet = {
+			limit = {
+				has_modifier = terraforming_candidate
+			}
+			remove_modifier = terraforming_candidate
+		}
+	}
+}

@@ -1,0 +1,145 @@
+namespace = tdi_apocalypse_fleets
+
+# Fleet Spawn Controller - Triggers every 730 days (2 years)
+event = {
+	id = tdi_apocalypse_fleets.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+		any_owned_fleet = {
+			is_ship_size = tdi_ancient_dreadnought
+		}
+	}
+	
+	immediate = {
+		# Spawn fleet at the Apocalypse Engine
+		random_owned_megastructure = {
+			limit = {
+				OR = {
+					is_megastructure_type = tdi_ancient_apocalypse_engine_5
+				}
+			}
+			solar_system = {
+				create_fleet = {
+					name = "Ancient Dreadnought Fleet"
+					effect = {
+						set_owner = prev.owner
+						create_ship = {
+							name = "Harbinger of Apocalypse"
+							design = "NAME_tdi_ancient_dreadnought"
+							graphical_culture = "pirate_01"
+						}
+						create_ship = {
+							name = "Reality Breaker"
+							design = "NAME_tdi_ancient_dreadnought"
+							graphical_culture = "pirate_01"
+						}
+						set_location = prevprev
+						set_fleet_flag = tdi_apocalypse_fleet
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+					}
+				}
+			}
+		}
+		
+		# Set next spawn
+		country_event = { id = tdi_apocalypse_fleets.1 days = 730 }
+	}
+}
+
+# Initial Fleet Spawn - Called when Engine activates
+country_event = {
+	id = tdi_apocalypse_fleets.2
+	title = "tdi_apocalypse_fleets.2.name"
+	desc = "tdi_apocalypse_fleets.2.desc"
+	picture = GFX_evt_fleet_evil
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Create initial dreadnought fleet
+		random_owned_megastructure = {
+			limit = {
+				is_megastructure_type = tdi_ancient_apocalypse_engine_5
+			}
+			solar_system = {
+				create_fleet = {
+					name = "Ancient Dreadnought Fleet Alpha"
+					effect = {
+						set_owner = prev.owner
+						create_ship = {
+							name = "Worldbreaker"
+							design = "NAME_tdi_ancient_dreadnought"
+							graphical_culture = "pirate_01"
+						}
+						create_ship = {
+							name = "Void Reaper"
+							design = "NAME_tdi_ancient_dreadnought"
+							graphical_culture = "pirate_01"
+						}
+						create_ship = {
+							name = "Eternity's End"
+							design = "NAME_tdi_ancient_dreadnought"
+							graphical_culture = "pirate_01"
+						}
+						set_location = prevprev
+						set_fleet_flag = tdi_apocalypse_fleet
+						set_fleet_flag = tdi_apocalypse_fleet_alpha
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+					}
+				}
+			}
+		}
+		
+		# Start spawn cycle
+		country_event = { id = tdi_apocalypse_fleets.1 days = 730 }
+	}
+	
+	option = {
+		name = "tdi_apocalypse_fleets.2.a"
+		tooltip = {
+			custom_tooltip = tdi_apocalypse_fleets_spawn
+		}
+	}
+}
+
+# Fleet Gets Stronger Over Time
+event = {
+	id = tdi_apocalypse_fleets.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+	}
+	
+	immediate = {
+		# Buff all apocalypse fleets
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = tdi_apocalypse_fleet
+			}
+			# Add ship to fleet
+			random_list = {
+				50 = {
+					create_ship = {
+						name = random
+						design = "NAME_tdi_ancient_dreadnought"
+						graphical_culture = "pirate_01"
+					}
+				}
+				50 = {
+					# Heal and upgrade existing ships
+					repair_percentage = 1.0
+				}
+			}
+		}
+		
+		# Continue buffing cycle every 5 years
+		country_event = { id = tdi_apocalypse_fleets.10 days = 1825 }
+	}
+}
