@@ -31,7 +31,7 @@ Additional content unlocks after meeting specific requirements. Build the prereq
 
 - **Base Game**: Stellaris
 - **DLCs Used**: Utopia, Apocalypse, MegaCorp, Federations, Nemesis, Ancient Relics, and others
-- **Supported Version**: 4.1.* (update this based on your game version)
+- **Supported Version**: 4.1.*
 
 ## 🎮 Installation
 
