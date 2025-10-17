@@ -1,3 +1,9 @@
+# **⚠️ ALPHA BUILD - WORK IN PROGRESS ⚠️**
+
+# ⚠️ ALPHA BUILD - BUGS INCLUDED!! ⚠️
+
+# ⚠️ ALPHA BUILD - DO NOT DOWNLOAD!! ⚠️
+
 # Ancient Structures
 
 A Stellaris mod that adds powerful ancient megastructures and... other things.
