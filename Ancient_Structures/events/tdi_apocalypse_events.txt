@@ -12,6 +12,7 @@ country_event = {
 	
 	immediate = {
 		# Inform the galaxy
+		country_event = { id = tdi_apocalypse.99 days = 9125 }
 		every_country = {
 			limit = {
 				is_country_type = default
@@ -395,5 +396,16 @@ country_event = {
 	option = {
 		name = "tdi_apocalypse.201.a"
 		# "You have forced our hand."
+	}
+}
+
+# 25 Years Passed - Unlock Final Protocol
+country_event = {
+	id = tdi_apocalypse.99
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = tdi_apocalypse_engine_25_years
 	}
 }

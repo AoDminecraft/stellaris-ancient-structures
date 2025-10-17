@@ -1,4 +1,4 @@
-# Ancient Basic Factory
+# Ancient Basic Factory - Uses Mega Shipyard Entities (4 stages total)
 tdi_ancient_basic_factory_0 = {
 	entity = "construction_platform_entity"
 	construction_entity = "construction_platform_entity"
@@ -46,8 +46,19 @@ tdi_ancient_basic_factory_0 = {
 		}
 	}
 
-	# root = system
-	# from = country
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
+	}
+
 	ai_weight = {
 		factor = 15
 
@@ -70,12 +81,8 @@ tdi_ancient_basic_factory_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		set_star_flag = built_tdi_ancient_basic_factory
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
+		solar_system = {
+			set_star_flag = built_tdi_ancient_basic_factory
 		}
 		fromfrom.planet = {
 			if = {
@@ -88,11 +95,13 @@ tdi_ancient_basic_factory_0 = {
 	}
 }
 
-# Ancient Basic Factory Frame
+# Ancient Basic Factory Stage 1
 tdi_ancient_basic_factory_1 = {
-	entity = "mega_shipyard_1_entity"
-	construction_entity = "mega_shipyard_1_construction_entity"
+	entity = "mega_shipyard_01_stage_1_entity"
+	construction_entity = "mega_shipyard_01_stage_1_entity"
 	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -108,22 +117,15 @@ tdi_ancient_basic_factory_1 = {
 	upgrade_from = {
 		tdi_ancient_basic_factory_0
 	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
 }
 
-# Partial Ancient Basic Factory
+# Ancient Basic Factory Stage 2
 tdi_ancient_basic_factory_2 = {
-	entity = "mega_shipyard_2_entity"
-	construction_entity = "mega_shipyard_2_construction_entity"
+	entity = "mega_shipyard_01_stage_2_entity"
+	construction_entity = "mega_shipyard_01_stage_2_entity"
 	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -139,84 +141,15 @@ tdi_ancient_basic_factory_2 = {
 	upgrade_from = {
 		tdi_ancient_basic_factory_1
 	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
 }
 
-# Partial Ancient Basic Factory
+# Operational Ancient Basic Factory (Final Stage)
 tdi_ancient_basic_factory_3 = {
-	entity = "mega_shipyard_3_entity"
-	construction_entity = "mega_shipyard_3_construction_entity"
-	portrait = "GFX_megastructure_construction_background"
-	build_time = 2000
-	resources = {
-		category = megastructures
-		cost = {
-			energy = 30000
-			minerals = 30000
-			food = 30000
-			consumer_goods = 30000
-			alloys = 30000
-		}
-	}
-
-	upgrade_from = {
-		tdi_ancient_basic_factory_2
-	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
-}
-
-# Partial Ancient Basic Factory
-tdi_ancient_basic_factory_4 = {
-	entity = "mega_shipyard_4_entity"
-	construction_entity = "mega_shipyard_4_construction_entity"
-	portrait = "GFX_megastructure_construction_background"
-	build_time = 2000
-	resources = {
-		category = megastructures
-		cost = {
-			energy = 30000
-			minerals = 30000
-			food = 30000
-			consumer_goods = 30000
-			alloys = 30000
-		}
-	}
-
-	upgrade_from = {
-		tdi_ancient_basic_factory_3
-	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
-}
-
-# Operational Ancient Basic Factory
-tdi_ancient_basic_factory_5 = {
-	entity = "mega_shipyard_5_entity"
-	construction_entity = "mega_shipyard_5_construction_entity"
+	entity = "mega_shipyard_01_stage_3_entity"
+	construction_entity = "mega_shipyard_01_stage_3_entity"
 	portrait = "GFX_megastructure_mega_shipyard_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -237,20 +170,16 @@ tdi_ancient_basic_factory_5 = {
 	}
 
 	upgrade_from = {
-		tdi_ancient_basic_factory_4
+		tdi_ancient_basic_factory_2
 	}
 
 	on_build_complete = {
+		solar_system = {
+			set_star_flag = mega_shipyard_built
+		}
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = tdi_ancient_basic_factory_operational
-		}
-
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
 		}
 	}
 }

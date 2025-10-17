@@ -12,6 +12,7 @@ tdi_ancient_apocalypse_engine_0 = {
 			energy = 50000
 			minerals = 50000
 			alloys = 50000
+			sr_zpm = 5
 			influence = 500
 		}
 	}
@@ -73,7 +74,9 @@ tdi_ancient_apocalypse_engine_0 = {
 	}
 	on_build_complete = {
 		fromfrom = {
-			set_star_flag = built_tdi_ancient_apocalypse_engine
+			solar_system = {
+				set_star_flag = built_tdi_ancient_apocalypse_engine
+			}	
 		}
 		from = { 
 			set_country_flag = built_tdi_ancient_apocalypse_engine
@@ -108,6 +111,7 @@ tdi_ancient_apocalypse_engine_1 = {
 			energy = 50000
 			minerals = 50000
 			alloys = 50000
+			sr_zpm = 10
 			influence = 250
 		}
 	}
@@ -145,6 +149,7 @@ tdi_ancient_apocalypse_engine_2 = {
 			minerals = 50000
 			alloys = 50000
 			sr_dark_matter = 1000
+			sr_zpm = 15
 			influence = 250
 		}
 	}
@@ -184,6 +189,7 @@ tdi_ancient_apocalypse_engine_3 = {
 			alloys = 50000
 			sr_dark_matter = 2000
 			sr_living_metal = 1000
+			sr_zpm = 20
 			influence = 250
 		}
 	}
@@ -223,6 +229,7 @@ tdi_ancient_apocalypse_engine_4 = {
 			alloys = 50000
 			sr_dark_matter = 3000
 			sr_living_metal = 2000
+			sr_zpm = 25
 			nanites = 1000
 			influence = 250
 		}
@@ -265,6 +272,7 @@ tdi_ancient_apocalypse_engine_5 = {
 			sr_living_metal = 5000
 			nanites = 5000
 			sr_zro = 2000
+			sr_zpm = 50
 			influence = 1000
 		}
 
@@ -274,6 +282,11 @@ tdi_ancient_apocalypse_engine_5 = {
 			sr_dark_matter = 200
 			sr_living_metal = 200
 			nanites = 200
+		}
+
+		# Crisis Engine Consumes ZPMs to stay Operational!
+		upkeep = {
+			sr_zpm = 5
 		}
 	}
 
@@ -291,9 +304,9 @@ tdi_ancient_apocalypse_engine_5 = {
 		
 		# Economic Dominance
 		all_technology_research_speed = 0.25
-		edict_fund_add = 10
+		country_edict_fund_add = 10
 		edict_length_mult = 1.00
-		country_influence_produces_add = 500
+		country_base_influence_produces_add = 500
 		country_unity_produces_mult = 0.50
 		
 		# Crisis Resources

@@ -1,9 +1,12 @@
 # The Final Protocol - Victory or Oblivion
 
+# COUNTRY-SCOPED DECISIONS
 decision_tdi_activate_final_protocol = {
-	owned_planets_only = no
-	sound = event_aetherophasic_engine
-	icon = decision_aetherophasic_engine
+	owned_planets_only = yes
+	
+	sound = event_mystic_reveal
+	icon = decision_glitchy_matrix
+	enactment_time = 0
 	
 	resources = {
 		category = decisions
@@ -14,29 +17,24 @@ decision_tdi_activate_final_protocol = {
 	}
 	
 	potential = {
-		has_country_flag = tdi_ancient_apocalypse_engine_operational
-		NOT = { has_country_flag = tdi_final_protocol_activated }
+		owner = {
+			has_country_flag = tdi_ancient_apocalypse_engine_operational
+			NOT = { has_country_flag = tdi_final_protocol_activated }
+			# Move the time check here
+			has_country_flag = tdi_apocalypse_engine_25_years
+		}
 	}
 	
 	allow = {
-		custom_tooltip = {
-			fail_text = "decision_tdi_final_protocol_time_requirement"
-			had_country_flag = {
-				flag = tdi_ancient_apocalypse_engine_operational
-				days > 9125
-			}
-		}
-		custom_tooltip = {
-			fail_text = "decision_tdi_final_protocol_victory_requirement"
+		owner = {
+			# Victory requirement - must have significant power/territory
 			OR = {
-				# Must control significant portion of galaxy
 				num_owned_planets > 50
 				fleet_power > 2000000
-				# OR have killed all FEs
 				NOT = {
 					any_country = {
 						is_country_type = fallen_empire
-						is_at_war_with = root
+						is_at_war_with = prev
 					}
 				}
 			}
@@ -46,8 +44,10 @@ decision_tdi_activate_final_protocol = {
 	effect = {
 		custom_tooltip = decision_tdi_final_protocol_effect
 		hidden_effect = {
-			set_country_flag = tdi_final_protocol_activated
-			country_event = { id = tdi_final_protocol.1 }
+			owner = {
+				set_country_flag = tdi_final_protocol_activated
+				country_event = { id = tdi_final_protocol.1 }
+			}
 		}
 	}
 	
@@ -56,11 +56,12 @@ decision_tdi_activate_final_protocol = {
 	}
 }
 
-# Apotheosis Path - Transcend Reality
 decision_tdi_apotheosis_transcend = {
-	owned_planets_only = no
-	sound = event_aetherophasic_engine
-	icon = decision_aetherophasic_engine
+	owned_planets_only = yes
+	
+	sound = event_mystic_reveal
+	icon = decision_glitchy_matrix
+	enactment_time = 0
 	
 	resources = {
 		category = decisions
@@ -75,15 +76,15 @@ decision_tdi_apotheosis_transcend = {
 	}
 	
 	potential = {
-		has_country_flag = tdi_final_protocol_activated
-		has_country_flag = tdi_apotheosis_path_unlocked
-		NOT = { has_country_flag = tdi_apotheosis_complete }
+		owner = {
+			has_country_flag = tdi_final_protocol_activated
+			has_country_flag = tdi_apotheosis_path_unlocked
+			NOT = { has_country_flag = tdi_apotheosis_complete }
+		}
 	}
 	
 	allow = {
-		custom_tooltip = {
-			fail_text = "decision_tdi_apotheosis_requirement"
-			# Must have completed final protocol sequence
+		owner = {
 			has_country_flag = tdi_final_protocol_stage_5
 		}
 	}
@@ -91,9 +92,10 @@ decision_tdi_apotheosis_transcend = {
 	effect = {
 		custom_tooltip = decision_tdi_apotheosis_effect
 		hidden_effect = {
-			set_country_flag = tdi_apotheosis_complete
-			# WIN CONDITION
-			country_event = { id = tdi_final_protocol.100 }
+			owner = {
+				set_country_flag = tdi_apotheosis_complete
+				country_event = { id = tdi_final_protocol.100 }
+			}
 		}
 	}
 	
@@ -102,11 +104,12 @@ decision_tdi_apotheosis_transcend = {
 	}
 }
 
-# Omnicide Path - Destroy Everything
 decision_tdi_omnicide = {
-	owned_planets_only = no
-	sound = event_aetherophasic_engine
-	icon = decision_aetherophasic_engine
+	owned_planets_only = yes
+	
+	sound = event_mystic_reveal
+	icon = decision_glitchy_matrix
+	enactment_time = 0
 	
 	resources = {
 		category = decisions
@@ -117,21 +120,21 @@ decision_tdi_omnicide = {
 	}
 	
 	potential = {
-		has_country_flag = tdi_final_protocol_activated
-		has_country_flag = tdi_omnicide_path_unlocked
-		NOT = { has_country_flag = tdi_omnicide_complete }
+		owner = {
+			has_country_flag = tdi_final_protocol_activated
+			has_country_flag = tdi_omnicide_path_unlocked
+			NOT = { has_country_flag = tdi_omnicide_complete }
+		}
 	}
 	
 	allow = {
-		custom_tooltip = {
-			fail_text = "decision_tdi_omnicide_requirement"
-			# Must control 75%+ of galaxy or have killed everyone
+		owner = {
 			OR = {
 				num_owned_planets > 100
 				NOT = {
 					any_country = {
 						is_country_type = default
-						NOT = { is_same_value = root }
+						NOT = { is_same_value = prev }
 					}
 				}
 			}
@@ -141,9 +144,10 @@ decision_tdi_omnicide = {
 	effect = {
 		custom_tooltip = decision_tdi_omnicide_effect
 		hidden_effect = {
-			set_country_flag = tdi_omnicide_complete
-			# ALTERNATE WIN CONDITION
-			country_event = { id = tdi_final_protocol.200 }
+			owner = {
+				set_country_flag = tdi_omnicide_complete
+				country_event = { id = tdi_final_protocol.200 }
+			}
 		}
 	}
 	

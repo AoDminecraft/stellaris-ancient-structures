@@ -1,0 +1,10 @@
+# ZPM (Zero Point Module) - Strategic Resource
+
+sr_zpm = {
+	tradable = no
+	max = 5000
+		
+	ai_weight = {
+		weight = 100
+	}
+}

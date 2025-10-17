@@ -229,3 +229,75 @@ tech_crisis_sphere_1 = {
 		custom_tooltip = tech_crisis_sphere_1_effect
 	}
 }
+
+# Ancient Gateway Technology - Unlocks access to Ancient Cluster
+tech_tdi_ancient_gateway = {
+	cost = @tier4cost3
+	area = physics
+	category = { particles }
+	tier = 4
+	prerequisites = { "tech_gateway_activation" }
+	weight = 50
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		is_ai = no
+	}
+	
+	# Can appear after you've built some ancient structures
+	modifier = {
+		factor = 0
+		NOR = {
+			has_technology = tech_tdi_ancient_basic_factory
+			has_technology = tech_tdi_ancient_advanced_factory
+		}
+	}
+	
+	# More likely if you have crisis ambitions
+	modifier = {
+		factor = 2
+		has_technology = tech_tdi_ancient_headquarters
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+# ZPM Extraction Technology
+tech_tdi_zpm_extraction = {
+	cost = @tier5cost1
+	area = engineering
+	category = { voidcraft }
+	tier = 5
+	prerequisites = { "tech_tdi_ancient_gateway" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	
+	potential = {
+		is_ai = no
+		has_country_flag = tdi_ancient_cluster_accessed
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 100
+			has_country_flag = tdi_ancient_cluster_accessed
+		}
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}

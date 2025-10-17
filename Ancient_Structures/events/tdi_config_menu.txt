@@ -1,0 +1,705 @@
+namespace = tdi_config
+
+# Configuration Menu - Opens on Game Start
+country_event = {
+	id = tdi_config.1
+	title = "tdi_config.1.name"
+	desc = "tdi_config.1.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = { has_global_flag = tdi_config_completed }
+	}
+	
+	immediate = {
+		set_global_flag = tdi_config_menu_open
+	}
+	
+	# Open main configuration menu
+	option = {
+		name = "tdi_config.1.a"
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# Skip configuration (use defaults)
+	option = {
+		name = "tdi_config.1.b"
+		custom_tooltip = tdi_config_use_defaults
+		hidden_effect = {
+			# Set all default multipliers
+			set_variable = { which = tdi_production_multiplier value = 1 }
+			set_variable = { which = tdi_military_multiplier value = 1 }
+			set_variable = { which = tdi_crisis_multiplier value = 1 }
+			set_variable = { which = tdi_cost_multiplier value = 1 }
+			set_global_flag = tdi_config_completed
+		}
+	}
+}
+
+# Main Config Menu
+country_event = {
+	id = tdi_config.10
+	title = "tdi_config.10.name"
+	desc = "tdi_config.10.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# Production Settings
+	option = {
+		name = "tdi_config.10.a"
+		country_event = { id = tdi_config.100 }
+	}
+	
+	# Military Settings
+	option = {
+		name = "tdi_config.10.b"
+		country_event = { id = tdi_config.200 }
+	}
+	
+	# Crisis Engine Settings
+	option = {
+		name = "tdi_config.10.c"
+		trigger = { always = yes }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# Difficulty Settings
+	option = {
+		name = "tdi_config.10.d"
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Chaos Options
+	option = {
+		name = "tdi_config.10.e"
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Finalize Configuration
+	option = {
+		name = "tdi_config.10.finish"
+		custom_tooltip = tdi_config_finalize
+		hidden_effect = {
+			set_global_flag = tdi_config_completed
+			# Apply all settings
+			country_event = { id = tdi_config.999 }
+		}
+	}
+}
+
+# ===== PRODUCTION MULTIPLIERS =====
+
+country_event = {
+	id = tdi_config.100
+	title = "tdi_config.100.name"
+	desc = "tdi_config.100.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# x1 (Normal)
+	option = {
+		name = "tdi_config.100.a"
+		set_variable = { which = tdi_production_multiplier value = 1 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x2
+	option = {
+		name = "tdi_config.100.b"
+		set_variable = { which = tdi_production_multiplier value = 2 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x4
+	option = {
+		name = "tdi_config.100.c"
+		set_variable = { which = tdi_production_multiplier value = 4 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x6
+	option = {
+		name = "tdi_config.100.d"
+		set_variable = { which = tdi_production_multiplier value = 6 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x8
+	option = {
+		name = "tdi_config.100.e"
+		set_variable = { which = tdi_production_multiplier value = 8 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x10 (MAXIMUM)
+	option = {
+		name = "tdi_config.100.f"
+		set_variable = { which = tdi_production_multiplier value = 10 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# Back
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.10 }
+	}
+}
+
+# ===== MILITARY MULTIPLIERS =====
+
+country_event = {
+	id = tdi_config.200
+	title = "tdi_config.200.name"
+	desc = "tdi_config.200.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# x1 (Normal)
+	option = {
+		name = "tdi_config.200.a"
+		set_variable = { which = tdi_military_multiplier value = 1 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x2
+	option = {
+		name = "tdi_config.200.b"
+		set_variable = { which = tdi_military_multiplier value = 2 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x4
+	option = {
+		name = "tdi_config.200.c"
+		set_variable = { which = tdi_military_multiplier value = 4 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x6
+	option = {
+		name = "tdi_config.200.d"
+		set_variable = { which = tdi_military_multiplier value = 6 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x8
+	option = {
+		name = "tdi_config.200.e"
+		set_variable = { which = tdi_military_multiplier value = 8 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# x10 (MAXIMUM)
+	option = {
+		name = "tdi_config.200.f"
+		set_variable = { which = tdi_military_multiplier value = 10 }
+		country_event = { id = tdi_config.10 }
+	}
+	
+	# Back
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.10 }
+	}
+}
+
+# ===== CRISIS ENGINE SETTINGS =====
+
+country_event = {
+	id = tdi_config.300
+	title = "tdi_config.300.name"
+	desc = "tdi_config.300.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	# Crisis Multiplier
+	option = {
+		name = "tdi_config.300.a"
+		country_event = { id = tdi_config.310 }
+	}
+	
+	# Diplomatic Penalty Speed
+	option = {
+		name = "tdi_config.300.b"
+		country_event = { id = tdi_config.320 }
+	}
+	
+	# Reality Tear Frequency
+	option = {
+		name = "tdi_config.300.c"
+		country_event = { id = tdi_config.330 }
+	}
+	
+	# Fleet Spawn Rate
+	option = {
+		name = "tdi_config.300.d"
+		country_event = { id = tdi_config.340 }
+	}
+	
+	# Back
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.10 }
+	}
+}
+
+# Crisis Power Multiplier
+country_event = {
+	id = tdi_config.310
+	title = "tdi_config.310.name"
+	desc = "tdi_config.310.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_config.310.a"
+		set_variable = { which = tdi_crisis_multiplier value = 1 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "tdi_config.310.b"
+		set_variable = { which = tdi_crisis_multiplier value = 2 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "tdi_config.310.c"
+		set_variable = { which = tdi_crisis_multiplier value = 4 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "tdi_config.310.d"
+		set_variable = { which = tdi_crisis_multiplier value = 8 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.300 }
+	}
+}
+
+# Diplomatic Penalty Speed
+country_event = {
+	id = tdi_config.320
+	title = "tdi_config.320.name"
+	desc = "tdi_config.320.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	# Normal (5 years)
+	option = {
+		name = "tdi_config.320.a"
+		set_variable = { which = tdi_diplo_speed value = 1825 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# Fast (2.5 years)
+	option = {
+		name = "tdi_config.320.b"
+		set_variable = { which = tdi_diplo_speed value = 912 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# Extreme (1 year)
+	option = {
+		name = "tdi_config.320.c"
+		set_variable = { which = tdi_diplo_speed value = 365 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# INSTANT (immediate escalation)
+	option = {
+		name = "tdi_config.320.d"
+		set_country_flag = tdi_instant_escalation
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.300 }
+	}
+}
+
+# Reality Tear Frequency
+country_event = {
+	id = tdi_config.330
+	title = "tdi_config.330.name"
+	desc = "tdi_config.330.desc"
+	picture = GFX_evt_dimensional_Horror
+	
+	is_triggered_only = yes
+	
+	# Normal (1-2 years)
+	option = {
+		name = "tdi_config.330.a"
+		set_variable = { which = tdi_reality_tear_freq value = 365 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# Frequent (6 months)
+	option = {
+		name = "tdi_config.330.b"
+		set_variable = { which = tdi_reality_tear_freq value = 180 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# Constant (monthly)
+	option = {
+		name = "tdi_config.330.c"
+		set_variable = { which = tdi_reality_tear_freq value = 30 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# MAXIMUM CHAOS (weekly)
+	option = {
+		name = "tdi_config.330.d"
+		set_variable = { which = tdi_reality_tear_freq value = 7 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.300 }
+	}
+}
+
+# Fleet Spawn Rate
+country_event = {
+	id = tdi_config.340
+	title = "tdi_config.340.name"
+	desc = "tdi_config.340.desc"
+	picture = GFX_evt_fleet_evil
+	
+	is_triggered_only = yes
+	
+	# Normal (2 years)
+	option = {
+		name = "tdi_config.340.a"
+		set_variable = { which = tdi_fleet_spawn_rate value = 730 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# x2 (1 year)
+	option = {
+		name = "tdi_config.340.b"
+		set_variable = { which = tdi_fleet_spawn_rate value = 365 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# x4 (6 months)
+	option = {
+		name = "tdi_config.340.c"
+		set_variable = { which = tdi_fleet_spawn_rate value = 180 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# x8 (3 months)
+	option = {
+		name = "tdi_config.340.d"
+		set_variable = { which = tdi_fleet_spawn_rate value = 90 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	# x16 (monthly - INSANE)
+	option = {
+		name = "tdi_config.340.e"
+		set_variable = { which = tdi_fleet_spawn_rate value = 30 }
+		country_event = { id = tdi_config.300 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.300 }
+	}
+}
+
+# ===== DIFFICULTY SETTINGS =====
+
+country_event = {
+	id = tdi_config.400
+	title = "tdi_config.400.name"
+	desc = "tdi_config.400.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# Construction Costs
+	option = {
+		name = "tdi_config.400.a"
+		country_event = { id = tdi_config.410 }
+	}
+	
+	# Tech Requirements
+	option = {
+		name = "tdi_config.400.b"
+		country_event = { id = tdi_config.420 }
+	}
+	
+	# FE Awakening Chance
+	option = {
+		name = "tdi_config.400.c"
+		country_event = { id = tdi_config.430 }
+	}
+	
+	# Back
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.10 }
+	}
+}
+
+# Construction Costs
+country_event = {
+	id = tdi_config.410
+	title = "tdi_config.410.name"
+	desc = "tdi_config.410.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# Normal (100%)
+	option = {
+		name = "tdi_config.410.a"
+		set_variable = { which = tdi_cost_multiplier value = 1 }
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# -25%
+	option = {
+		name = "tdi_config.410.b"
+		set_variable = { which = tdi_cost_multiplier value = 0.75 }
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# -50%
+	option = {
+		name = "tdi_config.410.c"
+		set_variable = { which = tdi_cost_multiplier value = 0.5 }
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# -75%
+	option = {
+		name = "tdi_config.410.d"
+		set_variable = { which = tdi_cost_multiplier value = 0.25 }
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# FREE (testing mode)
+	option = {
+		name = "tdi_config.410.e"
+		set_variable = { which = tdi_cost_multiplier value = 0.01 }
+		country_event = { id = tdi_config.400 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.400 }
+	}
+}
+
+# Tech Requirements
+country_event = {
+	id = tdi_config.420
+	title = "tdi_config.420.name"
+	desc = "tdi_config.420.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	# Normal
+	option = {
+		name = "tdi_config.420.a"
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Easier (reduced prereqs)
+	option = {
+		name = "tdi_config.420.b"
+		set_country_flag = tdi_easy_tech
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Very Easy (minimal prereqs)
+	option = {
+		name = "tdi_config.420.c"
+		set_country_flag = tdi_very_easy_tech
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Unlocked (all available immediately)
+	option = {
+		name = "tdi_config.420.d"
+		set_country_flag = tdi_unlock_all_tech
+		hidden_effect = {
+			give_technology = { tech = tech_tdi_ancient_factories message = no }
+			give_technology = { tech = tech_tdi_ancient_basic_factory message = no }
+			give_technology = { tech = tech_tdi_ancient_advanced_factory message = no }
+			give_technology = { tech = tech_tdi_ancient_exotic_factory message = no }
+			give_technology = { tech = tech_tdi_ancient_headquarters message = no }
+			give_technology = { tech = tech_tdi_ancient_empire_unification message = no }
+			give_technology = { tech = tech_crisis_sphere_1 message = no }
+		}
+		country_event = { id = tdi_config.400 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.400 }
+	}
+}
+
+# FE Awakening Chance
+country_event = {
+	id = tdi_config.430
+	title = "tdi_config.430.name"
+	desc = "tdi_config.430.desc"
+	picture = GFX_evt_fallen_empire_awaken_1
+	
+	is_triggered_only = yes
+	
+	# Normal (escalating)
+	option = {
+		name = "tdi_config.430.a"
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Higher (double chance)
+	option = {
+		name = "tdi_config.430.b"
+		set_country_flag = tdi_high_fe_awaken
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# Guaranteed (100% at each stage)
+	option = {
+		name = "tdi_config.430.c"
+		set_country_flag = tdi_guaranteed_fe_awaken
+		country_event = { id = tdi_config.400 }
+	}
+	
+	# ALL AT ONCE (they all wake immediately)
+	option = {
+		name = "tdi_config.430.d"
+		set_country_flag = tdi_all_fe_awaken_instant
+		country_event = { id = tdi_config.400 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.400 }
+	}
+}
+
+# ===== CHAOS OPTIONS =====
+
+country_event = {
+	id = tdi_config.500
+	title = "tdi_config.500.name"
+	desc = "tdi_config.500.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	# Enable Multiple Engines
+	option = {
+		name = "tdi_config.500.a"
+		trigger = { NOT = { has_country_flag = tdi_multiple_engines_enabled } }
+		set_country_flag = tdi_multiple_engines_enabled
+		custom_tooltip = tdi_multiple_engines_warning
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Disable Multiple Engines
+	option = {
+		name = "tdi_config.500.a_disable"
+		trigger = { has_country_flag = tdi_multiple_engines_enabled }
+		remove_country_flag = tdi_multiple_engines_enabled
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Unlock All Content Immediately
+	option = {
+		name = "tdi_config.500.b"
+		trigger = { NOT = { has_country_flag = tdi_instant_unlock } }
+		set_country_flag = tdi_instant_unlock
+		custom_tooltip = tdi_instant_unlock_tooltip
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Ancient Cluster Settings
+	option = {
+		name = "tdi_config.500.c"
+		country_event = { id = tdi_config.510 }
+	}
+	
+	# Back
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.10 }
+	}
+}
+
+# Ancient Cluster Settings
+country_event = {
+	id = tdi_config.510
+	title = "tdi_config.510.name"
+	desc = "tdi_config.510.desc"
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+	
+	# Normal (must discover and repair gateway)
+	option = {
+		name = "tdi_config.510.a"
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Easy Start (gateway location revealed)
+	option = {
+		name = "tdi_config.510.b"
+		set_country_flag = tdi_ancient_cluster_revealed
+		country_event = { id = tdi_config.500 }
+	}
+	
+	# Instant Access (gateway already repaired)
+	option = {
+		name = "tdi_config.510.c"
+		set_country_flag = tdi_ancient_cluster_instant_access
+		country_event = { id = tdi_config.500 }
+	}
+	
+	option = {
+		name = "BACK"
+		country_event = { id = tdi_config.500 }
+	}
+}
+
+# Configuration Complete
+country_event = {
+	id = tdi_config.999
+	title = "tdi_config.999.name"
+	desc = "tdi_config.999.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_config.999.a"
+		custom_tooltip = tdi_config_complete_tooltip
+	}
+}

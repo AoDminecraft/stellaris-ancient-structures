@@ -1,0 +1,228 @@
+namespace = tdi_ancient_cluster
+
+# Game Start - Spawn Ancient Gateway
+event = {
+	id = tdi_ancient_cluster.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		has_technology = tech_tdi_ancient_factories
+	}
+	
+	immediate = {
+		# Find a suitable system for the gateway
+		random_system = {
+			limit = {
+				NOT = { has_star_flag = lcluster }
+				NOT = { has_star_flag = guardian }
+				NOT = { is_star_class = sc_black_hole }
+				NOT = { is_star_class = sc_pulsar }
+				any_system_planet = {
+					is_star = yes
+				}
+				distance = {
+					source = prev
+					type = hyperlane
+					min_jumps = 10
+					max_jumps = 50
+				}
+			}
+			save_event_target_as = ancient_gateway_system
+			set_star_flag = tdi_ancient_gateway_system
+			
+			# Spawn dormant gateway
+			create_megastructure = {
+				type = tdi_ancient_gateway_00
+				owner = root
+			}
+		}
+		
+		# Notification after research
+		if = {
+			limit = { has_technology = tech_tdi_ancient_gateway }
+			country_event = { id = tdi_ancient_cluster.5 days = 30 }
+		}
+	}
+}
+
+# Gateway Discovered Notification
+country_event = {
+	id = tdi_ancient_cluster.5
+	title = "tdi_ancient_cluster.5.name"
+	desc = "tdi_ancient_cluster.5.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_mystic_reveal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_ancient_cluster.5.a"
+		
+		# Reveal the gateway system
+		event_target:ancient_gateway_system = {
+			set_surveyed = {
+				surveyed = yes
+				surveyor = root
+			}
+		}
+	}
+}
+
+# Gateway Restoration Started
+country_event = {
+	id = tdi_ancient_cluster.10
+	title = "tdi_ancient_cluster.10.name"
+	desc = "tdi_ancient_cluster.10.desc"
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_ancient_cluster.10.a"
+		custom_tooltip = tdi_gateway_restoration_begun
+	}
+}
+
+# Gateway Activated - Ancient Cluster Accessed!
+country_event = {
+	id = tdi_ancient_cluster.20
+	title = "tdi_ancient_cluster.20.name"
+	desc = "tdi_ancient_cluster.20.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_mystic_reveal
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Generate the Ancient Cluster
+		spawn_ancient_cluster = yes
+	}
+	
+	option = {
+		name = "tdi_ancient_cluster.20.a"
+		custom_tooltip = tdi_ancient_cluster_generated
+	}
+}
+
+# Ancient Cluster Generation Script
+# This creates 5-7 systems with Pulsars/Neutron Stars + Gaia Worlds
+country_event = {
+	id = tdi_ancient_cluster.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# Create 7 isolated systems for Ancient Cluster
+		create_country = {
+			name = "Ancient Cluster"
+			type = faction
+			effect = {
+				save_event_target_as = ancient_cluster_dummy
+			}
+		}
+		
+		# System 1
+		spawn_system = {
+			min_distance = 0
+			max_distance = 5
+			initializer = "tdi_ancient_cluster_system"
+			hyperlane = no
+			
+			effect = {
+				set_star_flag = tdi_ancient_cluster_system
+				set_star_flag = tdi_ancient_cluster_alpha
+				save_event_target_as = cluster_alpha
+				
+				# Create bypass connection to gateway
+				spawn_megastructure = {
+					type = ancient_gateway_link
+					coords_from = event_target:ancient_gateway_system
+				}
+			}
+		}
+		
+		# Systems 2-7 (repeat pattern)
+		# Each connected via hyperlanes within cluster
+		# All have pulsar/neutron + 3-5 gaias
+	}
+}
+
+# First Entry Into Ancient Cluster
+ship_event = {
+	id = tdi_ancient_cluster.200
+	title = "tdi_ancient_cluster.200.name"
+	desc = "tdi_ancient_cluster.200.desc"
+	picture = GFX_evt_ancient_records
+	show_sound = event_mystic_reveal
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			is_ai = no
+			NOT = { has_country_flag = tdi_ancient_cluster_entered }
+		}
+		solar_system = {
+			has_star_flag = tdi_ancient_cluster_system
+		}
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = tdi_ancient_cluster_entered
+		}
+	}
+	
+	option = {
+		name = "tdi_ancient_cluster.200.a"
+		custom_tooltip = tdi_ancient_cluster_explore
+		
+		owner = {
+			# Reveal ZPM extraction tech
+			if = {
+				limit = {
+					NOT = { has_technology = tech_tdi_zpm_extraction }
+				}
+				add_research_option = tech_tdi_zpm_extraction
+			}
+		}
+	}
+}
+
+# ZPM Facility Completed
+country_event = {
+	id = tdi_ancient_cluster.300
+	title = "tdi_ancient_cluster.300.name"
+	desc = "tdi_ancient_cluster.300.desc"
+	picture = GFX_evt_ancient_databank
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "tdi_ancient_cluster.300.a"
+		custom_tooltip = tdi_zpm_production_online
+	}
+}
+
+# Warning: Losing ZPM Facility
+country_event = {
+	id = tdi_ancient_cluster.400
+	title = "tdi_ancient_cluster.400.name"
+	desc = "tdi_ancient_cluster.400.desc"
+	picture = GFX_evt_crisis_sphere
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = tdi_ancient_apocalypse_engine_operational
+		# Lost a ZPM facility
+	}
+	
+	option = {
+		name = "tdi_ancient_cluster.400.a"
+		custom_tooltip = tdi_engine_failing_warning
+	}
+}

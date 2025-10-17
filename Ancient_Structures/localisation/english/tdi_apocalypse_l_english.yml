@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 
 # Megastructure
 tdi_ancient_apocalypse_engine_0: "Ancient Apocalypse Engine"
@@ -196,7 +196,7 @@ tdi_final_protocol.2.desc: "The Engine draws power from... somewhere. Everywhere
 tdi_final_protocol.2.a: "Unlimited power!"
 
 tdi_final_protocol.3.name: "Final Protocol: Reality Fractures"
-tdi_final_protocol.3.desc: "Reality is breaking. Systems throughout our empire report spatial anomalies, temporal distortions, dimensional breaches.\n\nThe Engine is pulling this entire region of space out of sync with normal reality.l_english:
+tdi_final_protocol.3.desc: "Reality is breaking. Systems throughout our empire report spatial anomalies, temporal distortions, dimensional breaches.\n\nThe Engine is pulling this entire region of space out of sync with normal reality.l_english:"
 
 # Megastructure
 tdi_ancient_apocalypse_engine_0: "Ancient Apocalypse Engine"
@@ -307,3 +307,91 @@ tech_crisis_sphere_1: "§RForbidden Knowledge: Apocalypse Engine§!"
 tech_crisis_sphere_1_title: "Ancient Apocalypse Engine"
 tech_crisis_sphere_1_desc: "Deep within the Ancient archives lies knowledge that was sealed away for a reason. Blueprints for a weapon so powerful, so devastating, that its mere existence would threaten the stability of the galaxy.\n\n§RThis technology is DANGEROUS. Once researched, there is no going back. The galaxy will unite against you.§!"
 tech_crisis_sphere_1_effect: "§RUnlocks the Ancient Apocalypse Engine megastructure.\n\nWARNING: Building this megastructure will:\n• Make ALL empires hostile to you\n• Dramatically increase Fallen Empire awakening chances\n• Escalate diplomatic penalties every 5 years\n• Create a permanent state of total war\n\nThis is the point of no return.§!"
+
+# Strategic Resource
+sr_zpm: "Zero Point Module"
+sr_zpm_desc: "An impossibly advanced power source that taps into vacuum energy itself. Each ZPM contains enough energy to power an entire civilization for millennia."
+sr_zpm_deficit: "ZPM Deficit"
+sr_zpm_deficit_desc: "Critical power shortage! Systems requiring ZPMs are failing!"
+
+# Technologies
+tech_tdi_ancient_gateway: "Ancient Gateway Activation"
+tech_tdi_ancient_gateway_desc: "Our analysis of ancient data fragments has revealed the existence of a dormant gateway network, separate from the L-Gate system. This gateway leads to something called the 'Ancient Cluster' - a hidden region of space that may contain the key to ultimate power."
+
+tech_tdi_zpm_extraction: "ZPM Extraction Technology"
+tech_tdi_zpm_extraction_desc: "The Ancient Cluster contains deposits of Zero Point Modules - power sources of unimaginable potency. We can build facilities to extract and harness these artifacts."
+
+# Megastructures - Ancient Gateway
+tdi_ancient_gateway_00: "Ancient Gateway (Dormant)"
+tdi_ancient_gateway_01: "Ancient Gateway (Restoration Site)"
+tdi_ancient_gateway_02: "Ancient Gateway (Repairing)"
+tdi_ancient_gateway_03: "Ancient Gateway (Operational)"
+tdi_ancient_gateway_restoration_locked: "§RRequires Ancient Gateway Activation technology§!"
+
+# Megastructures - ZPM Facilities
+tdi_zpm_facility_0: "ZPM Extraction Facility (Construction Site)"
+tdi_zpm_facility_1: "ZPM Extraction Facility (Under Construction)"
+tdi_zpm_facility_2: "ZPM Extraction Facility (Operational)"
+tdi_zpm_facility_2_desc: "This facility carefully extracts and processes Zero Point Modules from the unique quantum substrate of the Ancient Cluster. Each ZPM produced represents a staggering amount of power."
+
+tdi_requires_ancient_cluster: "§RCan only be built in the Ancient Cluster§!"
+tdi_zpm_facility_limit: "§RMaximum 7 ZPM Extraction Facilities per empire§!"
+
+# Events - Gateway Discovery
+tdi_ancient_cluster.5.name: "Ancient Gateway Discovered"
+tdi_ancient_cluster.5.desc: "Our deep space scanners have detected an unusual structure in the [ancient_gateway_system.GetName] system. It appears to be some kind of gateway, similar to the L-Gates but of a completely different design.\n\nUnlike the L-Gates, this structure is dormant but shows signs of recent use - perhaps within the last million years. Ancient inscriptions around its frame reference a 'Hidden Sanctuary' and 'Ultimate Power.'\n\nWith the proper technology, we may be able to reactivate this gateway and discover what lies beyond."
+tdi_ancient_cluster.5.a: "Chart a course. We must investigate this."
+
+# Events - Gateway Restoration
+tdi_ancient_cluster.10.name: "Gateway Restoration Begins"
+tdi_ancient_cluster.10.desc: "Our engineering teams have begun the painstaking work of restoring the Ancient Gateway. The technology is incredibly sophisticated - far beyond even the L-Gates.\n\nPreliminary analysis suggests the gateway connects to a completely separate region of space, isolated from the rest of the galaxy. Whatever civilization built this clearly wanted to keep something hidden... or protected."
+tdi_ancient_cluster.10.a: "Continue the work."
+tdi_gateway_restoration_begun: "§YThe Ancient Gateway is being restored. Once complete, you will gain access to the Ancient Cluster.§!"
+
+# Events - Gateway Activation
+tdi_ancient_cluster.20.name: "THE ANCIENT CLUSTER ACCESSED"
+tdi_ancient_cluster.20.desc: "The gateway ROARS to life, its power signature dwarfing anything we've seen before. As the aperture stabilizes, our sensors detect... paradise.\n\nSeven pristine systems, each centered around a pulsar or neutron star. Gaia worlds orbit in perfect harmony, their atmospheres thick with life. And beneath the surface of these stars, we detect something extraordinary:\n\n§YZero Point Modules§! - Power sources that could fuel our Apocalypse Engine!\n\nThis cluster was hidden for a reason. The ancient civilization that built it stored their ultimate power source here, safely tucked away from the rest of the galaxy.\n\nNow it's ours."
+tdi_ancient_cluster.20.a: "Secure the cluster. Immediately."
+tdi_ancient_cluster_generated: "§YThe Ancient Cluster has been generated! 7 new systems are now accessible through the Ancient Gateway. Each system contains valuable Gaia worlds and potential ZPM extraction sites.§!"
+
+# Events - First Entry
+tdi_ancient_cluster.200.name: "Paradise Found"
+tdi_ancient_cluster.200.desc: "Our fleet emerges into the Ancient Cluster and... it's breathtaking.\n\nGaia worlds as far as sensors can detect. Perfect atmospheres, ideal temperatures, thriving ecosystems. This place was designed as a sanctuary.\n\nBut more importantly, our scientists detect massive quantum anomalies within each star. These anomalies are §YZero Point Module deposits§! - the ancient civilization must have seeded them throughout the cluster.\n\nWith the proper technology, we could extract these ZPMs and use them to power... anything. Even our Apocalypse Engine."
+tdi_ancient_cluster.200.a: "Begin research immediately."
+tdi_ancient_cluster_explore: "§Y ZPM Extraction Technology§! is now available for research."
+
+# Events - ZPM Facility Complete
+tdi_ancient_cluster.300.name: "ZPM Production Online"
+tdi_ancient_cluster.300.desc: "The ZPM Extraction Facility is operational. Quantum drilling arrays bore into the star's core, carefully extracting Zero Point Modules from the subspace matrix.\n\nEach ZPM contains enough energy to power a planet for a millennium. With multiple facilities operational, we'll have the power needed for our ultimate ambitions."
+tdi_ancient_cluster.300.a: "Excellent."
+tdi_zpm_production_online: "§YThis facility will produce 2 ZPMs per month.§!"
+
+# Events - Warning
+tdi_ancient_cluster.400.name: "§RCRITICAL: ZPM SUPPLY THREATENED§!"
+tdi_ancient_cluster.400.desc: "§REMERGENCY ALERT§!\n\nWe've lost control of a ZPM Extraction Facility! Our ZPM production has dropped below the Apocalypse Engine's consumption rate!\n\nIf we cannot secure enough ZPMs, the Engine will begin to fail. Its reality-warping systems require continuous ZPM input to remain stable.\n\n§RWe must reclaim the Ancient Cluster or face Engine shutdown!§!"
+tdi_ancient_cluster.400.a: "Mobilize all available forces!"
+tdi_engine_failing_warning: "§RThe Apocalypse Engine will begin suffering penalties if ZPM supply remains insufficient!§!"
+
+# Config Menu Options
+tdi_config.510.name: "Ancient Cluster Settings"
+tdi_config.510.desc: "Configure how the Ancient Cluster functions in your game:\n\n§YNormal§!: Must discover gateway, research tech, and repair it\n§YEasy Start§!: Gateway location revealed at game start\n§YInstant Access§!: Gateway already operational, immediate access"
+tdi_config.510.a: "Normal (must discover and repair)"
+tdi_config.510.b: "Easy Start (location revealed)"
+tdi_config.510.c: "Instant Access (already operational)"
+
+# Decisions
+decision_tdi_activate_final_protocol: "Activate Final Protocol"
+decision_tdi_activate_final_protocol_desc: "After 25 years of war and transformation, the Apocalypse Engine is ready for its ultimate purpose. Activate the Final Protocol to begin the endgame sequence."
+decision_tdi_final_protocol_time_requirement: "§RThe Ancient Apocalypse Engine must be operational for at least 25 years (9,125 days).§!"
+decision_tdi_final_protocol_victory_requirement: "§RYou must control significant territory (50+ planets) OR have overwhelming military power (2M+ fleet power) OR have defeated all Fallen Empires at war with you.§!"
+decision_tdi_final_protocol_effect: "§YBegin the Final Protocol sequence. Over 5 years, reality will destabilize as the Engine prepares. After Stage 5, you will choose your final path: Apotheosis or Omnicide.§!"
+
+decision_tdi_apotheosis_transcend: "Choose Path: APOTHEOSIS"
+decision_tdi_apotheosis_transcend_desc: "Transcend physical reality. Your civilization will leave this universe behind, becoming post-corporeal god-beings existing in higher dimensions. Your physical empire will end, but your consciousness will become eternal."
+decision_tdi_apotheosis_requirement: "§RYou must complete the Final Protocol sequence (Stage 5).§!"
+decision_tdi_apotheosis_effect: "§Y=== VICTORY CONDITION ===§!\n\nTranscend this reality and achieve godhood. Your physical empire dissolves, but you ascend to eternal existence beyond mortal comprehension.\n\n§RThis is a win condition. The game will end.§!"
+
+decision_tdi_omnicide: "Choose Path: OMNICIDE"
+decision_tdi_omnicide_desc: "Unmake the galaxy. Use the Engine to erase all other life from existence. You will be the last civilization standing in a dead, silent universe. Supreme. Alone. Victorious."
+decision_tdi_omnicide_requirement: "§RYou must control most of the galaxy (100+ planets) OR have destroyed all other empires.§!"
+decision_tdi_omnicide_effect: "§R=== VICTORY CONDITION ===§!\n\nDestroy all other civilizations. The galaxy becomes a tomb with you as its only occupant. Total domination through total annihilation.\n\n§RThis is a win condition. The game will end.§!"

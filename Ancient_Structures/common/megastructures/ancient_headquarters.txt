@@ -1,4 +1,4 @@
-# Ancient Headquarters
+# Ancient Headquarters - Uses Strategic Coordination Center Entities (4 stages total)
 tdi_ancient_headquarters_0 = {
 	entity = "construction_platform_entity"
 	construction_entity = "construction_platform_entity"
@@ -50,8 +50,19 @@ tdi_ancient_headquarters_0 = {
 		}
 	}
 
-	# root = system
-	# from = country
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
+	}
+
 	ai_weight = {
 		factor = 15
 
@@ -74,14 +85,10 @@ tdi_ancient_headquarters_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		set_star_flag = built_tdi_ancient_headquarters
-		from = { set_country_flag = built_tdi_ancient_headquarters }
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
+		solar_system = {
+			set_star_flag = built_tdi_ancient_headquarters
 		}
+		from = { set_country_flag = built_tdi_ancient_headquarters }
 		fromfrom.planet = {
 			if = {
 				limit = { has_orbital_station = yes }
@@ -93,11 +100,13 @@ tdi_ancient_headquarters_0 = {
 	}
 }
 
-# Ancient Headquarters Frame
+# Ancient Headquarters Stage 1
 tdi_ancient_headquarters_1 = {
-	entity = "strategic_coordination_center_1_entity"
-	construction_entity = "strategic_coordination_center_1_construction_entity"
+	entity = "strategic_coordination_center_stage_1_entity"
+	construction_entity = "strategic_coordination_center_stage_1_entity"
 	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -113,22 +122,15 @@ tdi_ancient_headquarters_1 = {
 	upgrade_from = {
 		tdi_ancient_headquarters_0
 	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
 }
 
-# Partial Ancient Headquarters
+# Ancient Headquarters Stage 2
 tdi_ancient_headquarters_2 = {
-	entity = "strategic_coordination_center_2_entity"
-	construction_entity = "strategic_coordination_center_2_construction_entity"
+	entity = "strategic_coordination_center_stage_2_entity"
+	construction_entity = "strategic_coordination_center_stage_2_entity"
 	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -144,53 +146,15 @@ tdi_ancient_headquarters_2 = {
 	upgrade_from = {
 		tdi_ancient_headquarters_1
 	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
 }
 
-# Partial Ancient Headquarters
+# Operational Ancient Headquarters (Final Stage)
 tdi_ancient_headquarters_3 = {
-	entity = "strategic_coordination_center_3_entity"
-	construction_entity = "strategic_coordination_center_3_construction_entity"
-	portrait = "GFX_megastructure_construction_background"
-	build_time = 2000
-	resources = {
-		category = megastructures
-		cost = {
-			energy = 30000
-			minerals = 30000
-			food = 30000
-			consumer_goods = 30000
-			alloys = 30000
-		}
-	}
-
-	upgrade_from = {
-		tdi_ancient_headquarters_2
-	}
-
-	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
-	}
-}
-
-# Operational Ancient Headquarters
-tdi_ancient_headquarters_4 = {
-	entity = "strategic_coordination_center_4_entity"
-	construction_entity = "strategic_coordination_center_4_construction_entity"
+	entity = "strategic_coordination_center_stage_3_entity"
+	construction_entity = "strategic_coordination_center_stage_3_entity"
 	portrait = "GFX_megastructure_strategic_coordination_center_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
 	build_time = 2000
 	resources = {
 		category = megastructures
@@ -210,20 +174,16 @@ tdi_ancient_headquarters_4 = {
 	}
 
 	upgrade_from = {
-		tdi_ancient_headquarters_3
+		tdi_ancient_headquarters_2
 	}
 
 	on_build_complete = {
+		solar_system = {
+			set_star_flag = strategic_coordination_center_built
+		}
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			set_country_flag = tdi_ancient_headquarters_operational
-		}
-
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
 		}
 	}
 }

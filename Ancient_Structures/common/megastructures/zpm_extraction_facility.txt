@@ -1,0 +1,150 @@
+# ZPM Extraction Facility - Construction Site
+tdi_zpm_facility_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 15000
+			minerals = 15000
+			alloys = 10000
+		}
+	}
+
+	potential = {
+		is_ai = no
+	}
+
+	prerequisites = { "tech_tdi_zpm_extraction" }
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_in_ancient_cluster"
+			solar_system = {
+				has_star_flag = tdi_ancient_cluster_system
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 100  # AI should prioritize this in the Ancient Cluster
+	}
+
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		solar_system = {
+			set_star_flag = zpm_facility_site
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+		}
+	}
+}
+
+# ZPM Extraction Facility Stage 1
+tdi_zpm_facility_1 = {
+	entity = "thinktank_phase_01_entity"
+	construction_entity = "thinktank_phase_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 15000
+			minerals = 15000
+			alloys = 10000
+		}
+	}
+
+	upgrade_from = {
+		tdi_zpm_facility_0
+	}
+
+	on_build_complete = {
+		from = {
+			country_event = { id = tdi_zpm.1 }
+		}
+	}
+}
+
+# Operational ZPM Extraction Facility (Final Stage)
+tdi_zpm_facility_2 = {
+	entity = "thinktank_phase_03_entity"
+	construction_entity = "thinktank_phase_03_entity"
+	portrait = "GFX_megastructure_think_tank_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 15000
+			minerals = 15000
+			alloys = 10000
+		}
+
+		produces = {
+			sr_zpm = 5  # Produces ZPM resource
+		}
+	}
+
+	upgrade_from = {
+		tdi_zpm_facility_1
+	}
+
+	on_build_complete = {
+		solar_system = {
+			set_star_flag = zpm_facility_operational
+		}
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			set_country_flag = tdi_zpm_facility_built
+			country_event = { id = tdi_zpm.10 }
+		}
+	}
+}
